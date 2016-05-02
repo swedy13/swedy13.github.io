@@ -1,0 +1,18 @@
+div(id="{{page.categories}}" class="company" itemscope itemtype="http://schema.org/BlogPosting")
+  div.slider
+    <a class="iterator backward">&#10094;</a>
+
+    |{% for image in page.images %}
+    .slide
+      div(class='hero animated' style="background-image: url({{image.url}})")
+      p.exit-view x
+      .content
+        .left
+          h1.title {{image.alt}}
+          div(class='description' itemprop='articleBody') {{image.title}}
+        .right
+          .slider-position
+          .tools {{page.content}}
+    |{% endfor %}
+
+    <a class="iterator forward">&#10095;</a>

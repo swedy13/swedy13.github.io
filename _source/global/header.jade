@@ -1,0 +1,27 @@
+mixin nav-content()
+  ul.nav-links
+    li
+      .nav-color
+      a(href="/").nav-link home
+    li
+      .nav-color
+      a(class="nav-link" href="/case-studies.html") case studies
+    li
+      .nav-color
+      a(class="nav-link" href="/portfolio.html") portfolio
+    li
+      .nav-color
+      a(class="nav-link" href="/articles.html") articles
+    li
+      .nav-color
+      a(class="nav-link" href="#contact.html") contact
+
+
+header.site-header
+  a(href="/").logo.left mark swedberg
+  
+  nav.main-nav.right
+    +nav-content()
+
+  .mobile-nav.right
+    +nav-content()

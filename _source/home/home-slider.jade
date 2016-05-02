@@ -1,0 +1,18 @@
+section.slider#slider
+  <a class="iterator backward">&#10094;</a>
+
+  |{% for image in site.static_files %}
+  |{% if image.path contains 'img/companies/showcase' %}
+  .slide
+    img(class='hero animated' src="{{image.path}}")
+  |{% endif %}
+  |{% endfor %}
+
+  <a class="iterator forward">&#10095;</a>
+
+
+//-     {% for image in site.static_files %}
+//-     {% if image.path contains 'images/slider' %}
+//-         <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+//-     {% endif %}
+//- {% endfor %}

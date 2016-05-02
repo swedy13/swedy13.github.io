@@ -1,0 +1,61 @@
+.home-companies
+  height 80px
+  background-color #e1e1e1
+
+  .home-companies-row
+    display flex
+    height 80px
+    align-items center
+    justify-content center
+
+    .home-companies-title
+      display none
+      margin-right 30px
+      font-size 1.75em
+      font-weight 300
+      color gray
+
+    .home-companies-logo-thumb
+      visibility hidden
+      height 60px
+      width 60px
+      margin 0px 30px
+      animation-duration 1.3s
+      
+      .home-companies-centered
+        display flex
+        flex-direction column
+        align-items center
+
+        .home-companies-logo
+          display block
+          height 60px
+          width 60px
+          background-size cover
+          filter grayscale(100%)
+          opacity .5
+          transition .3s
+
+          &.DataQlick
+            opacity .7
+  
+          &:hover
+            height 70px
+            width 70px
+            margin-top -5px
+            filter grayscale(0%)
+            opacity 1
+  
+            &.Pairable
+              background-image: url(/assets/img/posts/thumbnails/pairable-hover.png) !important
+  
+            &.GuruFace
+              background-image: url(/assets/img/posts/thumbnails/guruface-hover.png) !important
+  
+        .home-companies-caption
+          z-index 1
+          display none
+          margin-top 5px
+          padding 2px 6px
+          background-color palegoldenrod
+          border 1px solid burlywood

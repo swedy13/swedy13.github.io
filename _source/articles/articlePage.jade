@@ -1,0 +1,5 @@
+article(class="article" itemscope itemtype="http://schema.org/BlogPosting")
+  header.article-header
+    h1.article-title {{page.title}}
+  div(class='article-hero {{page.title}}' style="background-image: url(/assets/img/posts/thumbnails/{{page.thumbnail}})")
+  div(class='article-content' itemprop='articleBody') {{content}}

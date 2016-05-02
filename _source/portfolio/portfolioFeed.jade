@@ -1,0 +1,18 @@
+article.portfolio#portfolio.portfolio-page
+  .portfolio-slider
+    // Iterate through all portfolio posts
+    |{% for post in site.categories.portfolio reversed %}
+    .card-container
+      .card
+        .card-flipper
+          .card-front
+            h3.card-head {{post.title}}
+            a(class="card-link {{post.title}}" href="{{post.url}}.html" style="background-image: url(assets/img/posts/thumbnails/{{post.thumbnail}})")
+          a(class="card-back" href="{{post.url}}.html")
+            .card-cap
+              h3.card-head {{post.title}}
+              hr.card-divider
+              .card-description {{post.excerpt}}
+              hr.card-divider
+              button.card-button More
+    |{% endfor %}

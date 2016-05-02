@@ -1,0 +1,102 @@
+.skills
+  display flex
+  flex-direction column
+  max-width 100vw
+  // padding 15px 0 0
+  background-color #1c1c1c
+
+  &.skills-page
+    padding-top 50px
+
+  .skills-title
+    display none
+    align-self center
+    margin 5px 0 15px
+    font-size 2em
+    font-weight 300
+    color #e5e5e5
+
+  .skills-slider
+    display flex
+    flex-wrap wrap
+
+    .card-link
+      display flex
+      flex-direction column
+      justify-content center
+
+      .skills-title
+        display block
+        padding-top 15px
+        opacity .7
+        font-size .9em
+
+      .skills-icon
+        height 100px
+        width 100px
+        opacity .7
+        background-size contain
+        background-position center
+        background-repeat no-repeat
+
+    .card-cap
+      span
+        display flex
+        justify-content center
+        align-items center
+
+        .skills-icon
+          height 25px
+          width 25px
+          opacity .7
+          background-size contain
+          background-position center
+          background-repeat no-repeat
+
+
+// CARDS
+@media screen and (min-width: 1101px)
+  .skills-slider
+    .card-link
+      background-color #5f9ea0
+
+    .card-container:nth-child(1),
+    .card-container:nth-child(3),
+    .card-container:nth-child(6),
+    .card-container:nth-child(8)
+      .card-link
+        background-color #408385
+
+// THREE COLUMN
+@media screen and (max-width: 1100px)
+  .skills-slider
+    .card-link
+      background-color #5f9ea0
+
+    .card-container:nth-child(1),
+    .card-container:nth-child(4),
+    .card-container:nth-child(6)
+      .card-link
+        background-color #408385
+
+// TWO COLUMN
+@media screen and (max-width: 850px)
+  .skills-slider
+    .card-link
+      background-color #408385
+
+    .card-container:nth-child(2),
+    .card-container:nth-child(8)
+      .card-link
+        background-color #5f9ea0
+
+// SINGLE COLUMN
+@media screen and (max-width: 548px)
+  .skills-slider
+    .card-link
+      background-color #5f9ea0
+
+    .card-container:nth-child(2),
+    .card-container:nth-child(6)
+      .card-link
+        background-color #408385
