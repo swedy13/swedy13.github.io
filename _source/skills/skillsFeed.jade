@@ -6,10 +6,10 @@ article.skills#skills
       .card
         .card-flipper
           .card-front
-            a(class="card-link {{post.title}}" href="{{post.url}}.html")
+            div(class="card-link {{post.title}}")
               div(class="skills-icon" style="background-image: url(assets/img/posts/thumbnails/{{post.thumbnail}})")
               h3.skills-title {{post.title}}
-          a(class="card-back" href="{{post.url}}.html")
+          div(class="card-back")
             .card-cap
               span
                 div(class="skills-icon" style="background-image: url(assets/img/posts/thumbnails/{{post.thumbnail}})")
@@ -17,5 +17,4 @@ article.skills#skills
               hr.card-divider
               .card-description {{post.excerpt}}
               hr.card-divider
-              button.card-button More
     |{% endfor %}

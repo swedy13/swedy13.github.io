@@ -4,6 +4,6 @@ section.home-companies#home-companies
     |{% for post in site.categories.case_studies reversed %}
     .home-companies-logo-thumb
       span.home-companies-centered
-        a(class="home-companies-logo {{post.title}}" href="{{post.url}}.html" style="background-image: url(assets/img/posts/thumbnails/{{post.thumbnail}})")
+        div(class="home-companies-logo {{post.title}}" style="background-image: url(assets/img/posts/thumbnails/{{post.thumbnail}})")
         p.home-companies-caption {{post.title}}
     |{% endfor %}

@@ -1,5 +1,5 @@
-<section id="slider" class="slider"><a class="iterator backward">&#10094;</a>
-{% for image in site.static_files %}
-{% if image.path contains 'img/companies/showcase' %}<div class="slide"><img src="{{image.path}}" class="hero animated"/></div>{% endif %}
+<section id="slider" class="slider">{% for image in site.static_files %}
+{% if image.path contains 'img/companies/showcase/' %}<div class="slide"><img src="{{image.path}}" class="hero animated"/></div>{% endif %}
 {% endfor %}
+<a class="iterator backward">&#10094;</a>
 <a class="iterator forward">&#10095;</a></section>

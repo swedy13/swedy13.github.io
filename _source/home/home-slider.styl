@@ -1,13 +1,22 @@
 #slider
   display flex
   align-items center
+  position relative
   background-image url('/assets/img/companies/showcase-bg.png')
 
   .iterator
-    margin 0 15px
+    position absolute
+    bottom 40%
     opacity .9
-    font-size 4em
     color white
+    text-shadow 0 0 1px #111, 0 0 4px #aaa
+    cursor pointer
+
+    &.backward
+      left 15px
+
+    &.forward
+      right 15px
 
   .slide
     display none
@@ -18,3 +27,32 @@
     .hero
       display block
       width 100%
+      animation-duration .75s
+
+
+// Mobile
+@media screen and (max-width: 567px)
+  #slider
+    height 100%
+
+    .iterator
+      font-size 2.5em
+
+
+// Tablet in portrait and small display
+@media screen and (min-width: 568px) and (max-width: 1000px) and (orientation: portrait)
+  #slider
+    height 100%
+
+    .iterator
+      font-size 4em
+
+
+// Tablet in landscape and laptop/desktop
+@media screen and (min-width: 568px) and (orientation: landscape)
+  #slider
+    height 100vh
+    background-size cover
+
+    .iterator
+      font-size 4em
