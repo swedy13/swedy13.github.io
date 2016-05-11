@@ -1,38 +1,33 @@
 // MOBILE NAV MENU
-@media screen and (max-width: 1024px)
-  header.site-header
-    .logo
-      z-index 5
-      position fixed
-      border 2px solid
+// @media screen and (max-width: 1024px)
+header.site-header
+  .logo
+    z-index 5
+    display block
+    position fixed
+    top 12px
+    left 12px
+    padding 8px
+    border 2px solid skyblue
+
+    p
       font-size 1.8em
       font-weight 300
-      pointer-events none
+      color skyblue
 
-      &.full
-        display none
-        margin 0
-        padding 0 5px
-        border-color transparent
-        color #444
+  .main-nav
+    display none
 
-      &.small
-        display block
-        top 12px
-        left 12px
-        padding 8px
-        border-color skyblue
-        color skyblue
+  .mobile-nav
+    z-index 5
+    display block
+    position fixed
+    top 12px
+    right 12px
+    width 40px
+    height 30px
 
-    .main-nav
-      display none
-
-    .mobile-nav
-      z-index 5
-      display block
-      position fixed
-      top 12px
-      right 12px
+    .menu-icon
       width 40px
       height 8px
       border-top 4px solid skyblue
@@ -45,125 +40,31 @@
         margin-top 21px
         border-bottom 4px solid skyblue
 
-    .mobile-nav
-      .nav-links
-        display none
-        position absolute
-        width 150px
-        top 35px
-        right 0
-        margin 0
-        padding 0
-        border-radius 2px
-        background-color white
-        box-shadow 0 3px 7px #777
-
-        li
-          width 80%
-          margin 0 10%
-          padding 10px 0
-          border-bottom 1px solid lightgray
-          text-align center
-          list-style none
-
-
-// DESKTOP MENU
-@media screen and (min-width: 1025px)
-  header.site-header
-    z-index 1
-    display flex
+  .nav-links
+    z-index 5
+    display none
     position fixed
-    height 36px
-    width 100vw
+    width 150px
+    top 50px
+    right 12px
+    margin 0
+    padding 0
+    border-radius 2px
     background-color white
-    border-bottom 1px solid lightgray
+    box-shadow 0 3px 7px #777
 
-    .logo
-      z-index 5
-      position fixed
-      border 2px solid
-      font-size 1.8em
-      font-weight 300
-      pointer-events none
-
-      &.full
-        display block
-        margin 0
-        padding 0 5px
-        border-color transparent
-        color #444
-
-      &.small
-        display none
-        top 12px
-        left 12px
-        padding 8px
-        border-color skyblue
-        color skyblue
-
-    &.invisible
-      background-color transparent
-      border-color transparent
-
-      .logo
-        &.full
-          display none
-
-        &.small
-          display block
-
-      .nav-link
-        visibility hidden
+    li
+      position relative
+      height 3em
+      border-bottom 1px solid lightgray
+      list-style none
 
       &:hover
-        background-color white
-        border-bottom 1px solid lightgray
+        background-color #eee
 
-        .logo
-          &.full
-            display block
-
-          &.small
-            display none
-
-
-        .nav-link
-          visibility visible
-
-    .mobile-nav
-      display none
-
-    .main-nav
-      z-index 2
-      display block
-      position fixed
-
-      .nav-links
+      .nav-link
         display flex
-        margin 0px
-        padding 0px
-        list-style none
-
-        li
-          .nav-color
-            height 7px
-            margin-bottom 6px
-            background-color #e1e1e1
-            border-right 1px solid #bbb
-
-          .nav-highlight
-            background-color #c04443
-
-          .current-nav
-            background-color #c04443
-
-          .nav-link
-            padding 8px 12px 6px 12px
-            padding-bottom 4px
-            color #444
-
-  .left
-    left 0
-
-  .right
-    right 0
+        align-items center
+        justify-content center
+        height 100%
+        width 100%

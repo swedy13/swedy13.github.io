@@ -1,28 +1,22 @@
 mixin nav-content()
   ul.nav-links
     li
-      .nav-color
-      a(href="/").nav-link home
+      a( class="nav-link" href="#home-parallax") home
     li
-      .nav-color
-      a(class="nav-link" href="/case-studies.html") case studies
+      a(class="nav-link" href="#bio") bio
     li
-      .nav-color
-      a(class="nav-link" href="/portfolio.html") portfolio
+      a(class="nav-link" href="#skills") services
     li
-      .nav-color
-      a(class="nav-link" href="/articles.html") articles
+      a(class="nav-link" href="#slider") portfolio
     li
-      .nav-color
-      a(class="nav-link" href="#contact.html") contact
+      a(class="nav-link" href="#contact") contact
 
 
 header.site-header
-  a(href="/").logo.left.full mark swedberg
-  a(href="/").logo.left.small ms
-
-  nav.main-nav.right
-    +nav-content()
+  //- a(href="/").logo.left.full mark swedberg
+  #logo.logo
+    p ms
 
   .mobile-nav.right
-    +nav-content()
+    .menu-icon
+  +nav-content()

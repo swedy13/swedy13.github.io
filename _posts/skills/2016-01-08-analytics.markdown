@@ -13,4 +13,6 @@ images:
     title: User Feedback
 ---
 
-Hello world, I'm the user feedback post...'
+<p>Analytics is one of the most overlooked areas of design.</p>
+<p>There are a variety of extremely powerful tools available, things like heatmapping, demographics, retargetting, and more.</p>
+<p>A good design is always informed by data, otherwise it will be all form without the desired functionality.</p>

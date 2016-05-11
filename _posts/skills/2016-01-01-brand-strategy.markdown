@@ -13,4 +13,6 @@ images:
     title: User Feedback
 ---
 
-Hello world, I'm the user feedback post...'
+<p>Branding is the process of establishing specific imagery and language around your company.</p>
+<p>This includes things like color choices, font selection, and icon sets to name a few.</p>
+<p>The best tool for this is good old fashioned brainstorming, although eventually it's necessary to mockup some designs settle on specific color hexes, font styles, etc. </p>

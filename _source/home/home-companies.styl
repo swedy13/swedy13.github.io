@@ -25,7 +25,7 @@
           background-size cover
           filter grayscale(100%)
           opacity .5
-          transition .3s
+          transition .3s cubic-bezier(0.5,1,0.25,1)
 
           &.DataQlick
             opacity .7
@@ -85,10 +85,7 @@
         .home-companies-centered
           .home-companies-logo
             &:hover
-              height 70px
-              width 70px
-              margin-top -5px
-              margin-left -5px
+              transform scale(1.25)
               filter grayscale(0%)
               opacity 1
 

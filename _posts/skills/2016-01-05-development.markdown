@@ -13,4 +13,6 @@ images:
     title: User Feedback
 ---
 
-Hello world, I'm the user feedback post...'
+<p>Web development has three parts: what your site looks like, how it works, and what kind of information is contains.</p>
+<p>Most websites run on top of an existing platform. Wordpress is a good example of this.</p>
+<p>Common tools include text editors, a variety of libraries (ie pre-written code), and platform-based tools such as webhooks.</p>

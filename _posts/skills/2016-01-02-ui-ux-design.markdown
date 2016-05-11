@@ -13,4 +13,6 @@ images:
     title: User Feedback
 ---
 
-Hello world, I'm the user feedback post...'
+<p>User experience (UX) and user interface (UI) are two separate types of design.</p>
+<p>UX focuses on how the user interacts with your site as a whole, whereas UI is about how your site looks.</p>
+<p>UX tends to rely on analytics software and user research, while UI uses wireframing tools and graphic editing software.</p>

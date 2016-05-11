@@ -16,57 +16,44 @@ $('document').ready(function() {
 								slideAnimation();
 								toggleZoom();
 
-								toggleMobile();
-								navHighlight(0);
-				}
-
-				// COMPANY FEED
-				else if ($('div').hasClass('companies-page')) {
-								companiesMethods();
-								navHighlight(1);
-				}
-
-				// COMPANY PAGE
-				else if ($('div').hasClass('company')) {
-								slideLoad();
-								showcaseSlider();
-								slideAnimation();
-								toggleZoom();
-
-								if ($('div.company').attr('id') == 'case_studies') {
-												navHighlight(1);
-								}
-								else {
-												navHighlight(2);
-								}
-				}
-
-				// PORTFOLIO FEED
-				else if ($('div').hasClass('portfolio-page')) {
-								portfolioMethods();
-								navHighlight(2);
-				}
-
-				// ARTICLE FEED
-				else if ($('div').hasClass('articles-page')) {
-								articlesMethods();
-								navHighlight(3);
+								logoAnimation();
+								menuAnimation();
+								toggleMenu();
 				}
 });
 
-// MOBILE MENU
-function toggleMobile() {
-				$('.mobile-nav').click(function() {
-								$('.mobile-nav > .nav-links').fadeToggle(50);
+
+function logoAnimation() {
+				$('.logo').hover(function() {
+								$('.logo').toggleClass('animated swing');
 				});
 }
 
-// NAV HIGHLIGHT
+
+function menuAnimation() {
+				$('.mobile-nav').hover(function() {
+								$('.mobile-nav').toggleClass('animated tada');
+				});
+}
+
+
+function toggleMenu() {
+				$('html').click(function() {
+								$('.nav-links').fadeOut(150);
+				});
+
+				$('.mobile-nav').click(function(e) {
+								e.stopPropagation();
+								$('.nav-links').fadeToggle(150);
+				});
+}
+
+
 function navHighlight(linkNum) {
 				$('li').children('div').eq(linkNum).addClass('current-nav');
 }
 
-// NAV HOVER EFFECTS
+
 function navHover() {
 				// Highlights link
 				$('.nav-links').find('li').mouseenter(function() {
@@ -166,14 +153,6 @@ function homeMethods() {
 																			.addClass('animated fadeIn');
 												}, 1400);
 								}
-
-								// Articles
-								/*if ($('#home-articles').offset().top - ($(window).height() / 1.8) < windowPosition) {
-											pageTitleReveal('home-articles-title', 'slideInDown');
-											setTimeout(function() {
-											animationEffect('home-article', 'fadeIn', 400);
-											}, 300);
-											}*/
 				});
 }
 
