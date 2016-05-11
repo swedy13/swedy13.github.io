@@ -1,7 +1,7 @@
 ---
 layout: case-study
 title: "Development"
-thumbnail: dev.png
+thumbnail: development.png
 date: 2016-01-01 09:15:51 -0600
 categories: skills
 tags: planning, dataqlick, guruface, mark-swedberg, mythros
