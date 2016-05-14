@@ -4825,12 +4825,9 @@ header.site-header .nav-links li .nav-link {
 }
 #slider .slide .hero {
   display: block;
-  min-width: calc(100% - 20px);
-  padding: 10px;
-  background-color: #777;
+  min-width: 100%;
   -webkit-animation-duration: 0.75s;
           animation-duration: 0.75s;
-  overflow: hidden;
 }
 @media screen and (max-width: 567px) {
   #slider .iterator {
