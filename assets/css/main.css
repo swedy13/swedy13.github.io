@@ -4790,7 +4790,6 @@ header.site-header .nav-links li .nav-link {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  background-image: url("/assets/img/companies/showcase-bg.png");
 }
 #slider .iterator {
   position: absolute;
@@ -4808,37 +4807,42 @@ header.site-header .nav-links li .nav-link {
 }
 #slider .slide {
   display: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 #slider .slide.visible {
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 #slider .slide .hero {
   display: block;
-  width: 100%;
+  min-width: calc(100% - 20px);
+  padding: 10px;
+  background-color: #777;
   -webkit-animation-duration: 0.75s;
           animation-duration: 0.75s;
+  overflow: hidden;
 }
 @media screen and (max-width: 567px) {
-  #slider {
-    height: 100%;
-  }
   #slider .iterator {
     font-size: 2.5em;
   }
 }
 @media screen and (min-width: 568px) and (max-width: 1000px) and (orientation: portrait) {
-  #slider {
-    height: 100%;
-  }
   #slider .iterator {
     font-size: 4em;
   }
 }
 @media screen and (min-width: 568px) and (orientation: landscape) {
-  #slider {
-    height: 100vh;
-    background-size: cover;
-  }
   #slider .iterator {
     font-size: 4em;
   }
