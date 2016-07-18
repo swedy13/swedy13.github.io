@@ -265,6 +265,9 @@ canvas {
   height: -webkit-calc(100% -65);
   height: calc(100% -65);
 }
+.company {
+  display: none;
+}
 .watermark {
   opacity: 0.25;
   color: #808080;
