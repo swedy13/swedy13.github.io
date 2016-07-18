@@ -1,0 +1,238 @@
+// Container
+.card-container
+  display flex
+  flex-wrap wrap
+  align-items center
+  width 25%
+
+// Portfolio Link Card
+.card-link
+  display flex
+  align-items center
+  justify-content center
+  position relative
+  height 300px
+  width 100%
+  min-width 250px
+  background-color #1c1c1c
+  font-size 2em
+  font-weight 300
+  color #e1e1e1
+
+  &:hover
+    background-color rgba(83, 78, 120, 1)
+    color #e1e1e1
+    text-shadow 0 1px 1px #333
+    transition background-color .25s
+
+&.card-more
+  visibility hidden
+
+// Card
+.card, .card-front, .card-back
+  display block
+  height 300px
+  width 100%
+  min-width 250px
+
+.card
+  visibility hidden
+  position relative
+  perspective 1000
+
+  &:hover .card-flipper
+    transform: rotateY(180deg);
+
+// Flip Animation
+.card-flipper
+  transition 0.35s
+  transform-style preserve-3d
+  position relative
+
+.card-front, .card-back
+  backface-visibility hidden
+  position absolute
+
+.card-front
+  z-index 2
+  transform rotateY(0deg)
+
+.card-back
+  transform rotateY(180deg)
+
+// Front
+.card-front
+  .card-head
+    z-index 1
+    position absolute
+    width 100%
+    bottom 45%
+    left 0
+    right 0
+    opacity .7
+    font-size 1.5em
+    font-weight 300
+    color white
+    text-align center
+
+  .card-link
+    display block
+    height 100%
+    width 100%
+    background-size 425px
+    background-position center
+    background-repeat no-repeat
+
+    &.Wireframing
+      background-size 450px
+      background-position center right
+
+    &.Mockups
+      background-size 450px
+      background-position center left
+
+// Back
+.card-back
+  cursor default
+
+  .card-cap
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    padding .5em
+    background-color rgba(83, 78, 120, 1)
+    color #e1e1e1
+
+    span
+      margin-top 15px
+
+    .card-head
+      margin 0 8px
+      font-size 1.3em
+      text-align center
+      font-weight 300
+
+    .card-divider
+      width 100%
+      margin 8px -3px
+
+    .card-description
+      font-size .9em
+      line-height 1.4
+
+      p
+        margin 10px
+
+    .card-button
+      padding: 2px 10px
+      margin 2px
+      background-color: #eee
+      border: 1px solid #ddd
+      border-radius: 3px
+      font-size .9em
+      font-weight 500
+      color: #333
+      float: right
+
+
+// THREE COLUMN
+@media screen and (max-width: 1100px)
+
+  // Container
+  .card-container
+    min-width 33.333%
+
+  .card-container:nth-child(4n+3)
+    display none
+
+
+// TWO COLUMN
+@media screen and (max-width: 850px)
+
+  // Container
+  .card-container
+    min-width 50%
+
+  .card-container:nth-child(3n+1)
+    display none
+
+
+// SINGLE COLUMN
+@media screen and (max-width: 548px)
+
+  // Container
+  .card-container
+    width 100vw
+    margin 0
+    padding 0
+
+  // Portfolio Link Card
+  .card-link
+    display flex
+    align-items center
+    justify-content center
+    position relative
+    // right -50px
+    // width 100vw
+    min-width 250px
+    background-color #1c1c1c
+    // border 2px solid #e1e1e1
+    font-size 1.7em
+    font-weight 300
+    color #e1e1e1
+    margin 0
+    padding 0
+
+    // &:hover
+    //   background-color #e1e1e1
+    //   box-shadow 0 0 1px 2px #e1e1e1
+    //   font-size 1.8em
+    //   font-weight 500
+    //   color rgba(83, 78, 120, 1)
+    //   text-decoration underline
+
+  // Card
+  .card
+    width 100vw
+    min-width 250px
+
+  // Front
+  .card-front
+    .card-link
+      display block
+      // height 250px
+      // width 100%
+      background none
+      // background-image url('../img/home/card.jpg')
+      // background-size cover
+      // background-position center
+
+  .card-back
+    display none
+  //   h3.card-head
+  //     position absolute
+  //     width 100%
+  //     margin-top -250px
+  //     padding: 6px 0 10px;
+  //     color: #e1e1e1;
+  //     text-align: center;
+  //     text-shadow 0px 2px 2px #333
+  //     background-color: rgba(83, 78, 120, .75)
+  //     box-shadow 0 2px 6px 2px #333
+
+  //   .card-divider
+  //     display none
+
+  //   .card-description
+  //     position absolute
+  //     width 100%
+  //     margin-top -32px
+  //     padding 6px
+  //     background-color: rgba(225, 225, 225, .85)
+  //     border-top 1px solid #aaa
+  //     box-shadow 0 -2px 2px #aaa
+
+  //   .card-button
+  //     display none

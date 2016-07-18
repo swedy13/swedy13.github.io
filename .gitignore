@@ -1,5 +1,6 @@
 _site
-.sass-cache
 .jekyll-metadata
-.psd
+_research
+_site
+assets/video
 node_modules

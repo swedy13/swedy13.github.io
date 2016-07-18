@@ -1,3 +1,0 @@
-<div id="{{page.categories}}" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" class="company"><div class="slider"><a class="iterator backward">&#10094;</a>
-{% for image in page.images %}<div class="slide"><div style="background-image: url({{image.url}})" class="hero animated"></div><p class="exit-view">x</p><div class="content"><div class="left"><h1 class="title">{{image.alt}}</h1><div itemprop="articleBody" class="description">{{image.title}}</div></div><div class="right"><div class="slider-position"></div><div class="tools">{{page.content}}</div></div></div></div>{% endfor %}
-<a class="iterator forward">&#10095;</a></div></div>
