@@ -1,13 +1,13 @@
 section#hero.hero
   .content
     .center
-      h1 Mark Swedberg
+      img(class="name" src="assets/images/mark-swedberg.svg" onerror="this.src='assets/images/mark-swedberg.png'")
       h3 a silicon valley web designer
-      img(class='more' src="assets/images/arrow.png")
+      img(class='more' src="assets/images/arrow.svg" onerrors="this.src='assets/images/arrow.png'")
     .preloader
       .circle
-        svg(xmlns="http://www.w3.org/2000/svg")
-          path(xmlns="http://www.w3.org/2000/svg" class="wave" d="m692.033997,15.401c0,0 -12.926025,-10 -19.885986,-12c-13.919983,-5 -29.828003,-3 -40.765991,7c-12.926025,8.999999 -29.829041,11.999999 -44.744019,5c-6.960022,-4 -12.926025,-10 -19.885986,-12c-13.921021,-5 -29.830017,-3 -40.767029,7c-12.925964,8.999999 -29.828979,11.999999 -44.742981,5c-6.959991,-4 -12.927002,-10 -19.886993,-12c-13.920013,-5 -29.82901,-3 -40.766998,7c-12.925995,8.999999 -29.82901,11.999999 -44.744019,5c-6.959991,-4 -12.925995,-10 -19.885986,-12c-13.920013,-5 -29.82901,-3 -40.765991,7l0.993988,-1c-16.902985,12.999999 -39.772003,10.999999 -56.675995,-2c-14.914001,-12 -34.800003,-8 -48.721008,2c-16.903,12.999999 -39.770996,10.999999 -56.674988,-2c-14.915009,-12 -34.801003,-8 -48.721008,2c-16.903,12.999999 -39.771996,10.999999 -56.675999,-2c-14.913998,-12 -34.799998,-8 -48.721,2l0,208.940003l736.778041,0l0,-207.940003c-12.922058,8.999999 -29.825073,11.999999 -44.740051,5z")
+        .wave(style="background-image: url('assets/images/wave.png')")
+        .wave-background
       .title
         h3 l
         h3 o
@@ -19,9 +19,7 @@ section#hero.hero
         h3 .
         h3 .
         h3 .
-      a(class="credits" href="https://codepen.io/bbosiljcic/" target="_blank") Animation by @bbosiljcic
-
-
+      a(class="credits" href="https://codepen.io/bbosiljcic/" target="_blank") Animation inspired by @bbosiljcic
   .video
     .filter
     video(class="fillWidth" loop)

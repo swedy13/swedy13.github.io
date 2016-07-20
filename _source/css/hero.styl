@@ -1,9 +1,3 @@
-// Keyframe for preloader
-@keyframes fillup {
-  0%   { transform: translate(0,150px); }
-  100% { transform: translate(-(100%),-5em); }
-}
-
 // ---- MOBILE ---- //
 .hero
   position relative
@@ -58,7 +52,15 @@
         background darken(#fff, 60%)
 
         .wave
-          animation fillup 6s linear 1
+          height 33px
+          width 500px
+          margin-top 150px
+          background-repeat repeat
+
+        .wave-background
+          height 150px
+          width 150px
+          background-color #0b95bf
 
       .credits
         position absolute
@@ -70,21 +72,13 @@
     .center
       text-align center
 
-      h1, h3
-        margin 0
-        color white
-        text-shadow 0 1px 5px #777
-
-      h1
-        font-family Otto
-        font-size 7.5em
-        font-weight 400
-        line-height .6
-
       h3
+        margin 0
         padding .5em 0 2em
         font-size 1.5em
         font-weight 300
+        color white
+        text-shadow 0 1px 5px #777
 
       img.more
         z-index 1
@@ -118,8 +112,8 @@
   .hero
     .content
       .center
-        h1
-          font-size 8.5em
+        img.name
+          filter brightness(2) drop-shadow(0 1px 2px #999)
 
         h3
           font-size 1.65em
@@ -129,10 +123,8 @@
   .hero
     .content
       .center
-        h1
-          margin-bottom -.15em
-          font-size 13em
-          font-weight 400
+        img.name
+          filter brightness(2) drop-shadow(0 1px 3px #999)
 
         h3
           margin-top -.15em

@@ -25,20 +25,30 @@ function runPreloader() {
 								}
 				}, 150);
 
-				// Pauses the animation when full
 				setTimeout(function() {
-								$(".wave").css("-webkit-animation-play-state", "paused");
-				}, 4500);
+								for (var i = 0; i < load.length; i++) {
+												$(load).animate({
+																marginTop: 35
+												}, 500);
+								}
+				}, 150);
+
+				// Animate waves
+				$('.wave').animate({
+								marginTop: -30,
+								marginLeft: -400
+				}, 4000);
 
 				// Moves the preloader off screen
-				$('.preloader').delay(5000).animate({
+				$('.preloader').delay(4000).animate({
 								top: -height,
 								bottom: height,
 				}, 750);
 
+				// Removes preloader node
 				setTimeout(function() {
-								$('.preloader').remove();
-				}, 7000);
+							$('.preloader').remove();
+							}, 7500);
 }
 
 function getVideo(src) {
@@ -49,7 +59,7 @@ function getVideo(src) {
 
 				setTimeout(function() {
 								$('.fillWidth').get(0).play();
-				}, 5250);
+				}, 4250);
 }
 
 function scaleVideoContainer() {
