@@ -8,7 +8,7 @@ var unitWidth = parseInt(width) + 'px';
 $(document).ready(function() {
 
 				// Hero Methods
-				randomizeVideo();
+				getHero();
 				scaleVideoContainer();
 
 				initBannerVideoSize('.video-container .poster img');

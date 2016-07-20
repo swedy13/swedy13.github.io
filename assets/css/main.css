@@ -33,7 +33,6 @@ button {
   border: none;
 }
 .hero .content {
-  z-index: 100;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -51,6 +50,73 @@ button {
   height: 100vh;
   width: 100vw;
   max-width: 100%;
+}
+.hero .content .preloader {
+  z-index: 2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #262626;
+  fill: #0b95bf;
+  text-align: center;
+}
+.hero .content .preloader .title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: no-wrap;
+      -ms-flex-wrap: no-wrap;
+          flex-wrap: no-wrap;
+  height: 100px;
+  width: 100%;
+}
+.hero .content .preloader .title h3 {
+  margin-top: 100px;
+  padding: 0 2px;
+  font-size: 2em;
+  font-weight: 400;
+  color: #ddd;
+  opacity: 0;
+}
+.hero .content .preloader .circle {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  background: #666;
+}
+.hero .content .preloader .circle .wave {
+  -webkit-animation: fillup 6s linear 1;
+          animation: fillup 6s linear 1;
+}
+.hero .content .preloader .credits {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #aaa;
+  text-decoration: none;
 }
 .hero .content .center {
   text-align: center;
@@ -73,6 +139,7 @@ button {
   font-weight: 300;
 }
 .hero .content .center img.more {
+  z-index: 1;
   position: absolute;
   bottom: 30px;
   left: -webkit-calc(50% - 1.25em);
@@ -133,11 +200,30 @@ button {
     width: 3.5em;
   }
 }
+@-webkit-keyframes fillup {
+  0% {
+    -webkit-transform: translate(0, 150px);
+            transform: translate(0, 150px);
+  }
+  100% {
+    -webkit-transform: translate(-100%, -5em);
+            transform: translate(-100%, -5em);
+  }
+}
+@keyframes fillup {
+  0% {
+    -webkit-transform: translate(0, 150px);
+            transform: translate(0, 150px);
+  }
+  100% {
+    -webkit-transform: translate(-100%, -5em);
+            transform: translate(-100%, -5em);
+  }
+}
 .portfolio {
   height: 100vh;
 }
 .portfolio .filters {
-  z-index: 100;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -260,7 +346,7 @@ button {
   margin: 0;
   font-size: 1em;
 }
-canvas {
+canvas.circles {
   width: 100%;
   height: -webkit-calc(100% -65);
   height: calc(100% -65);

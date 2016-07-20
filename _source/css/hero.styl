@@ -1,3 +1,9 @@
+// Keyframe for preloader
+@keyframes fillup {
+  0%   { transform: translate(0,150px); }
+  100% { transform: translate(-(100%),-5em); }
+}
+
 // ---- MOBILE ---- //
 .hero
   position relative
@@ -5,7 +11,6 @@
   border none
 
   .content
-    z-index 100
     display flex
     align-items center
     justify-content center
@@ -14,6 +19,53 @@
     height 100vh
     width 100vw
     max-width 100%
+
+    .preloader
+      z-index 2
+      display flex
+      align-content center
+      justify-content center
+      flex-wrap wrap
+      position fixed
+      top 0
+      bottom 0
+      right 0
+      left 0
+      background-color #262626
+      fill #0b95bf
+      text-align center
+
+      .title
+        display flex
+        justify-content center
+        flex-wrap no-wrap
+        height 100px
+        width 100%
+
+        h3
+          margin-top 100px
+          padding 0 2px
+          font-size 2em
+          font-weight 400
+          color #ddd
+          opacity 0
+
+      .circle
+        height 150px
+        width 150px
+        overflow hidden
+        border-radius 100%
+        background darken(#fff, 60%)
+
+        .wave
+          animation fillup 6s linear 1
+
+      .credits
+        position absolute
+        bottom 15px
+        left 15px
+        color #aaa
+        text-decoration none
 
     .center
       text-align center
@@ -35,6 +87,7 @@
         font-weight 300
 
       img.more
+        z-index 1
         position absolute
         bottom 30px
         left calc(50% - 1.25em)
@@ -58,7 +111,6 @@
   .no-video .video .poster,
   .touch .video .poster
     display block !important
-
 
 
 // ---- LARGE MOBILE ---- //
