@@ -6,7 +6,6 @@ var unitWidth = parseInt(width) + 'px';
 
 
 $(document).ready(function() {
-
 				// Hero Methods
 				getHero();
 				scaleVideoContainer();

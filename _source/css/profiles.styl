@@ -1,12 +1,12 @@
 .profiles
   display flex
-  flex-wrap no-wrap
+  flex-wrap nowrap
   background-color #bbb
 
   // Card Transforms
   .card
     position relative
-    perspective 1000
+    perspective 1000px
     cursor pointer
 
     &:hover .card-flipper
@@ -33,7 +33,7 @@
         flex-wrap wrap
         text-align center
         position absolute
-        backface-visibility hideen
+        backface-visibility hiden
 
         .content
           display flex
@@ -162,7 +162,7 @@
 // Tabet
 @media screen and (orientation: landscape) and (min-width: 774px)
   .profiles
-    flex-wrap no-wrap
+    flex-wrap nowrap
 
     .card
       .card-flipper

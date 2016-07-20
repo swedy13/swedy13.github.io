@@ -1,10 +1,9 @@
 body {
   margin: 0px;
   font-family: Roboto;
+  -ms-user-select: none;
+  -moz-user-select: none;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 p,
 h1,
@@ -33,6 +32,7 @@ button {
   border: none;
 }
 .hero .content {
+  z-index: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -73,7 +73,6 @@ button {
   right: 0;
   left: 0;
   background-color: #262626;
-  fill: #0b95bf;
   text-align: center;
 }
 .hero .content .preloader .title {
@@ -85,9 +84,9 @@ button {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-flex-wrap: no-wrap;
-      -ms-flex-wrap: no-wrap;
-          flex-wrap: no-wrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   height: 100px;
   width: 100%;
 }
@@ -137,7 +136,6 @@ button {
   text-shadow: 0 1px 5px #777;
 }
 .hero .content .center img.more {
-  z-index: 1;
   position: absolute;
   bottom: 30px;
   left: -webkit-calc(50% - 1.25em);
@@ -367,15 +365,15 @@ canvas.circles {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: no-wrap;
-      -ms-flex-wrap: no-wrap;
-          flex-wrap: no-wrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
   background-color: #bbb;
 }
 .profiles .card {
   position: relative;
-  -webkit-perspective: 1000;
-          perspective: 1000;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
   cursor: pointer;
 }
 .profiles .card:hover .card-flipper {
@@ -416,8 +414,8 @@ canvas.circles {
           flex-wrap: wrap;
   text-align: center;
   position: absolute;
-  -webkit-backface-visibility: hideen;
-          backface-visibility: hideen;
+  -webkit-backface-visibility: hiden;
+          backface-visibility: hiden;
 }
 .profiles .card .card-flipper .card-front .content,
 .profiles .card .card-flipper .card-back .content {
@@ -552,9 +550,9 @@ canvas.circles {
 }
 @media screen and (orientation: landscape) and (min-width: 774px) {
   .profiles {
-    -webkit-flex-wrap: no-wrap;
-        -ms-flex-wrap: no-wrap;
-            flex-wrap: no-wrap;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
   }
   .profiles .card .card-flipper .card-front .logo img,
   .profiles .card .card-flipper .card-back .logo img {
