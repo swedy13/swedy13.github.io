@@ -1,58 +1,11 @@
 section#portfolio.portfolio
-  .filters
-    .platform
-      button
-        p Platform
-        .arrow-down
-      ul
-        li
-          input(class='checkbox' type="checkbox")
-          p Website
-        li
-          input(class='checkbox' type="checkbox")
-          p Web App
-        li
-          input(class='checkbox' type="checkbox")
-          p Mobile App
-
-    .type
-      button
-        p Type
-        .arrow-down
-      ul
-        li
-          input(class='checkbox' type="checkbox")
-          p Dashboards
-        li
-          input(class='checkbox' type="checkbox")
-          p Landing Pages
-        li
-          input(class='checkbox' type="checkbox")
-          p Marketplace
-        li
-          input(class='checkbox' type="checkbox")
-          p Social Media
-
-    .industry
-      button
-        p Industry
-        .arrow-down
-      ul
-        li
-          input(class='checkbox' type="checkbox")
-          p Business
-        li
-          input(class='checkbox' type="checkbox")
-          p Entertainment
-        li
-          input(class='checkbox' type="checkbox")
-          p Sports
-
-  canvas.circles
-  p.watermark Portfolio
-
   |{% for post in site.categories.company %}
-  div(class='active {{post.categories | join: ' '}}')
-    image(class="company-logo" src="assets/images/posts/thumbnails/{{post.thumbnail}}")
-    h2.company-name {{post.title}}
+  div(class="company {{post.categories[0]}}" style="background-image: url('assets/images/posts/thumbnails/{{post.thumbnail}}')")
+    .mask
+    .hover
+    .content
+      .header
+        img(class="logo" src='assets/images/posts/thumbnails/{{post.logo}}')
+        h3.title {{post.title}}
+      .description {{post.content}}
   |{% endfor %}

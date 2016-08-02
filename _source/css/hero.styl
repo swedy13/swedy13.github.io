@@ -5,6 +5,7 @@
   border none
 
   .content
+    z-index 1
     display flex
     align-items center
     justify-content center
@@ -15,7 +16,7 @@
     max-width 100%
 
     .preloader
-      z-index 2
+      z-index 100
       display flex
       align-content center
       justify-content center
@@ -26,13 +27,12 @@
       right 0
       left 0
       background-color #262626
-      fill #0b95bf
       text-align center
 
       .title
         display flex
         justify-content center
-        flex-wrap no-wrap
+        flex-wrap nowrap
         height 100px
         width 100%
 
@@ -78,10 +78,9 @@
         font-size 1.5em
         font-weight 300
         color white
-        text-shadow 0 1px 5px #777
+        // text-shadow 0 1px 5px #777
 
       img.more
-        z-index 1
         position absolute
         bottom 30px
         left calc(50% - 1.25em)
@@ -112,8 +111,8 @@
   .hero
     .content
       .center
-        img.name
-          filter brightness(2) drop-shadow(0 1px 2px #999)
+        // img.name
+        //   filter brightness(2) drop-shadow(0 1px 2px #999)
 
         h3
           font-size 1.65em
@@ -123,8 +122,8 @@
   .hero
     .content
       .center
-        img.name
-          filter brightness(2) drop-shadow(0 1px 3px #999)
+        // img.name
+        //   filter brightness(2) drop-shadow(0 1px 3px #999)
 
         h3
           margin-top -.15em

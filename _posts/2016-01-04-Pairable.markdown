@@ -1,7 +1,0 @@
----
-layout: project
-title:  "Pairable"
-thumbnail: pairable.png
-date:   2016-07-09 13:50:56 -0500
-categories: pairable company mobile-apps entertainment surveys end
----

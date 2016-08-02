@@ -1,0 +1,56 @@
+footer
+  display flex
+  align-items center
+  flex-wrap wrap
+  height 75px
+  margin auto
+
+  .links
+    color #777
+    font-size 1em
+
+  .social
+    display flex
+    align-items center
+    justify-content center
+
+    a
+      text-decoration none
+
+      &:hover
+        .contact-caption
+          display block
+
+      .link
+        display flex
+        align-items center
+        justify-content center
+        margin 0 5px
+
+        img
+          height 30px
+          opacity 1
+          transition .1s
+
+          &:hover
+            transform scale(1.1)
+
+        &.gmail
+          img
+            filter drop-shadow(0 0 1px #555)
+
+        .contact-caption
+          display none
+
+
+@media screen and (max-width: 767px)
+  footer
+    justify-content center
+    width 80%
+    padding 15px 0
+
+
+@media screen and (min-width: 768px)
+  footer
+    justify-content space-between
+    width 98%

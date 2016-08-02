@@ -1,0 +1,16 @@
+---
+layout: project
+title:  "Pairable"
+date:   2016-07-09 13:50:56 -0500
+categories: pairable company mobile-apps entertainment surveys end
+thumbnail: pairable.png
+logo: pairable-logo.png
+---
+
+<quote>Track What Matters Most</quote>
+<p>A mobile app and tracking device to help locate anything.</p>
+<div class="buttons">
+ 	<button>Design</button>
+ 	<button>Prototype</button>
+</div>
+

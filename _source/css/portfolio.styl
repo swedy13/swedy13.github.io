@@ -1,116 +1,192 @@
+// ---- BASE STYLES ---- //
 .portfolio
-  height 100vh
+  display flex
+  flex-wrap wrap
 
-  .filters
+  .company
     display flex
     align-items center
     justify-content center
+    flex-grow 1
     position relative
-    height 65px
-    width 100vw
-    max-width 100%
-    border-bottom 1px solid #ddd
+    background-size cover
+    background-position center
+    background-repeat no-repeat
 
-    .platform, .type, .industry
-      min-width 15%
-      max-width 30%
-      margin 0 10px
+    .mask
+      position absolute
+      top 0
+      bottom 0
+      left 0
+      right 0
+      background-color rgba(0,0,0,.5)
 
-      button
-        display flex
-        align-items center
-        justify-content space-between
+    .hover
+      position absolute
+      top 25%
+      bottom 25%
+      left 25%
+      right 25%
+      opacity 0
+
+    .content
+      align-items center
+      flex-wrap wrap
+      position relative
+      padding 10%
+      color white
+
+      .header
         width 100%
-        padding 8px 12px
-        background-color #e5e5e5
-        outline none
-        border 1px solid #ddd
-        border-radius 5px
-        font-size 1em
+        text-align center
 
-        &:hover
-          background-color #ddd
+        h3.title
+          display none
+          margin 0
+          margin-bottom 5px
+          font-size 1.5em
+
+      .description
+        display none
+        width 100%
+        text-align center
+
+        quote
+          width 100%
+          font-size 1.1em
+          font-weight 300
+          font-style italic
 
         p
-          margin 0
+          font-size 1.1em
 
-        .arrow-down
-          width 0
-          height 0
-          border-left 6px solid transparent
-          border-right 6px solid transparent
-          border-top 6px solid #777
-
-      ul
-        display none
-        position absolute
-        min-width calc(15% - 2px)
-        max-width calc(30% - 2px)
-        padding 0
-        margin-top -2px
-        background-color white
-        border 1px solid #ddd
-        box-shadow 0 1px 5px #e5e5e5
-        list-style none
-
-        &:focus
-          background-color red
-
-        li
-          display flex
-          align-items center
-          padding 12px
+        button
+          margin 25px 4px 0
+          padding 7px 24px
+          background none
+          outline none
+          border 2px solid white
+          border-radius 3px
+          line-height 1.1em
+          font-size .9em
+          font-weight bold
+          color white
+          text-transform uppercase
 
           &:hover
-            background-color #f5f5f5
-
-          input[type=checkbox]
-            height 16px
-            width 16px
-            margin-right 12px
-            outline none
-
-          p
-            margin 0
-            font-size 1em
+            background-color white
+            color #333
 
 
-// Canvas
-canvas.circles
-  width 100%
-  height calc(100%-65)
 
-// Portfolio Content
-.company
-  display none
+// ---- COMPANY STYLES ---- //
+.portfolio
+  .company
+    .content
+      .header
+        img.logo
+          filter drop-shadow(0 1px 0 #333)
 
-// Watermark
-$margin = -100vh + 10em
-$lmargin = -100vh + 20em
+    &:hover
+      .hover
+        display block
+        top 0
+        bottom 0
+        left 0
+        right 0
+        opacity .9
+        transition .1s ease-out
 
-.watermark
-  opacity .25
-  color gray
-  font-weight 300
-  margin-left .5em
+      .content
+        display flex
+
+        .header
+          img.logo
+            display none
+
+          h3.title
+            display block
+
+        .description
+          display block
+
+    &.sage
+      &:hover
+        .hover
+          background-color #07b977
+
+      .content
+        .header
+          img.logo
+            width 200px
+
+    &.smartprofyl
+      .hover
+        background-color #0076a3
+
+      .content
+        .header
+          img.logo
+            width 300px
+
+    &.pairable
+      .hover
+        background-color darkkhaki
+
+      .content
+        .header
+          img.logo
+            width 225px
+
+    &.movietv
+      .hover
+        background-color darkslategray
+
+      .content
+        .header
+          img.logo
+            width 200px
+
+    &.prodigy
+      .hover
+        background-color skyblue
+
+      .content
+        .header
+          img.logo
+            width 250px
+
+    &.atsc
+      .hover
+        background-color #e62c2c
+
+      .content
+        .header
+          img.logo
+            width 300px
 
 
-@media screen and (orientation: portrait) and (max-height: 773px)
-  .watermark
-    font-size 3em
-    margin-top $margin
 
-@media screen and (min-height: 774px)
-  .watermark
-    font-size 5em
-    margin-top $margin
+// ---- MEDIA QUERIES ---- //
+@media screen and (orientation: portrait) and (max-width: 767px)
+  .company
+    height 65vw
+    width 100vw
+    max-width 100%
 
-@media screen and (orientation: landscape) and (max-width: 773px)
-  .watermark
-    font-size 3em
-    margin-top $lmargin
+@media screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px)
+  .company
+    height 35vw
+    width 50vw
+    max-width 50%
 
-@media screen and (min-width: 774px)
-  .watermark
-    font-size 5em
-    margin-top $margin
+@media screen and (orientation: landscape) and (max-width 1023px)
+  .company
+    height 35vw
+    width 50vw
+    max-width 50%
+
+@media screen and (min-width: 1024px)
+  .company
+    height 25vw
+    width calc(33vw - 1px)

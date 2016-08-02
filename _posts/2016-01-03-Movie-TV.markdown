@@ -1,7 +1,0 @@
----
-layout: project
-title: "Movie.TV"
-thumbnail: movie-tv.png
-date: 2016-07-09 13:50:56 -0500
-categories: movie.tv company marketplaces websites entertainment end
----

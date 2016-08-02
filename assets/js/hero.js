@@ -1,8 +1,8 @@
 function getHero() {
-				var videos = ['birdcatcher', 'Hello-World', 'One-Swan', 'Up'];
+				var videos = ['Hello-World', 'One-Swan', 'Up'];
 
 				for (let video of videos) {
-								var randomize = Math.floor(Math.random() * 4);
+								var randomize = Math.floor(Math.random() * 3);
 								var src = `assets\\video\\${videos[randomize]}\\${videos[randomize]}`;
 
 								// Start preloader animatino
@@ -21,7 +21,7 @@ function runPreloader() {
 												$(load[i]).animate({
 																marginTop: 25,
 																opacity: 1
-												}, 250 + 150*i);
+												}, 100 + 75*i);
 								}
 				}, 150);
 
@@ -29,7 +29,7 @@ function runPreloader() {
 								for (var i = 0; i < load.length; i++) {
 												$(load).animate({
 																marginTop: 35
-												}, 500);
+												}, 175);
 								}
 				}, 150);
 
@@ -37,7 +37,7 @@ function runPreloader() {
 				$('.wave').animate({
 								marginTop: -30,
 								marginLeft: -400
-				}, 4000);
+				}, 4500);
 
 				// Moves the preloader off screen
 				$('.preloader').delay(4000).animate({
@@ -48,7 +48,7 @@ function runPreloader() {
 				// Removes preloader node
 				setTimeout(function() {
 							$('.preloader').remove();
-							}, 7500);
+							}, 5000);
 }
 
 function getVideo(src) {

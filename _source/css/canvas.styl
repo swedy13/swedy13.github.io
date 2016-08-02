@@ -1,0 +1,58 @@
+// Portfolio Content
+.portfolio
+  .companies
+    display flex
+    align-items center
+    justify-content center
+    flex-wrap wrap
+    height calc(100vh - 65px)
+    position relative
+
+    .company
+      display flex
+      align-items flex-end
+      justify-content center
+      min-width calc(49vw - 10px)
+      height 30%
+      border 5px solid red
+
+      img
+        height 50px
+        width auto
+
+
+// Canvas
+canvas.circles
+  width 100%
+  height calc(100%-65)
+
+// Watermark
+$margin = -100vh + 10em
+$lmargin = -100vh + 20em
+
+.watermark
+  opacity .25
+  color gray
+  font-weight 300
+  margin-left .5em
+
+
+@media screen and (orientation: portrait) and (max-height: 773px)
+  .watermark
+    font-size 3em
+    margin-top $margin
+
+@media screen and (min-height: 774px)
+  .watermark
+    font-size 5em
+    margin-top $margin
+
+@media screen and (orientation: landscape) and (max-width: 773px)
+  .watermark
+    font-size 3em
+    margin-top $lmargin
+
+@media screen and (min-width: 774px)
+  .watermark
+    font-size 5em
+    margin-top $margin
