@@ -1,10 +1,6 @@
 body {
   margin: 0px;
-<<<<<<< HEAD
   font-family: roboto, sans-serif;
-=======
-  font-family: Roboto;
->>>>>>> 070d386dbac8b85a7f32b73317714c49ca55b0ad
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -314,86 +310,7 @@ button {
   margin: 0;
   font-size: 1em;
 }
-<<<<<<< HEAD
 .portfolio {
-=======
-canvas.circles {
-  width: 100%;
-  height: -webkit-calc(100% -65);
-  height: calc(100% -65);
-}
-.company {
-  display: none;
-}
-.watermark {
-  opacity: 0.25;
-  color: #808080;
-  font-weight: 300;
-  margin-left: 0.5em;
-}
-@media screen and (orientation: portrait) and (max-height: 773px) {
-  .watermark {
-    font-size: 3em;
-    margin-top: -90vh;
-  }
-}
-@media screen and (min-height: 774px) {
-  .watermark {
-    font-size: 5em;
-    margin-top: -90vh;
-  }
-}
-@media screen and (orientation: landscape) and (max-width: 773px) {
-  .watermark {
-    font-size: 3em;
-    margin-top: -80vh;
-  }
-}
-@media screen and (min-width: 774px) {
-  .watermark {
-    font-size: 5em;
-    margin-top: -90vh;
-  }
-}
-.profiles {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-  background-color: #bbb;
-}
-.profiles .card {
-  position: relative;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  cursor: pointer;
-}
-.profiles .card:hover .card-flipper {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-.profiles .card .card-flipper {
-  position: relative;
-  -webkit-transition: 0.35s;
-  transition: 0.35s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-.profiles .card .card-flipper .card-front {
-  z-index: 2;
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
-}
-.profiles .card .card-flipper .card-back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-.profiles .card .card-flipper .card-front,
-.profiles .card .card-flipper .card-back {
->>>>>>> 070d386dbac8b85a7f32b73317714c49ca55b0ad
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -401,13 +318,6 @@ canvas.circles {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-<<<<<<< HEAD
-=======
-  text-align: center;
-  position: absolute;
-  -webkit-backface-visibility: hiden;
-          backface-visibility: hiden;
->>>>>>> 070d386dbac8b85a7f32b73317714c49ca55b0ad
 }
 .portfolio .company {
   display: -webkit-box;
@@ -588,19 +498,11 @@ canvas.circles {
     max-width: 50%;
   }
 }
-<<<<<<< HEAD
 @media screen and (min-width: 1024px) {
   .company {
     height: 25vw;
     width: -webkit-calc(33vw - 1px);
     width: calc(33vw - 1px);
-=======
-@media screen and (orientation: landscape) and (min-width: 774px) {
-  .profiles {
-    -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
->>>>>>> 070d386dbac8b85a7f32b73317714c49ca55b0ad
   }
 }
 footer {
