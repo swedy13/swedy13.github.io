@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // .profiles
 //   display flex
 //   flex-wrap nowrap
@@ -179,3 +180,186 @@
 //     height 40vh
 //     width 25vw
 //     max-width 100%
+=======
+.profiles
+  display flex
+  flex-wrap nowrap
+  background-color #bbb
+
+  // Card Transforms
+  .card
+    position relative
+    perspective 1000px
+    cursor pointer
+
+    &:hover .card-flipper
+      transform rotateY(180deg)
+
+    .card-flipper
+      position relative
+      transition .35s
+      transform-style preserve-3d
+
+      .card-front
+        z-index 2
+        transform rotateY(0deg)
+
+      .card-back
+        transform rotateY(180deg)
+
+      // Card Content
+      .card-front,
+      .card-back
+        display flex
+        align-content center
+        justify-content center
+        flex-wrap wrap
+        text-align center
+        position absolute
+        backface-visibility hiden
+
+        .content
+          display flex
+          align-content center
+          justify-content center
+          flex-wrap wrap
+          width 100%
+
+          p, .slug
+            width 100%
+            color white
+            font-size 1.2em
+
+          .avatar
+            height 150px
+            width 150px
+            border 1px solid #555
+            border-radius 100%
+            background-size cover
+            box-shadow 0 3px 5px 5px #4d4d4d
+
+        .logo
+          margin-bottom 10px
+
+        button
+          width 50%
+          padding 8px 24px
+          background-color white
+          outline none
+          border-radius 3px
+          border 1px solid #555
+          box-shadow 0 3px 5px 5px #4d4d4d
+          color #555
+          font-size 1em
+          font-weight 700
+          text-decoration none
+
+// Card Colors
+.card-back
+  background-color #555
+
+.quora
+  .card-front
+    background-color #b92b27
+
+.linkedin
+  .card-front
+    background-color #0077b5
+
+.github
+  .card-front
+    background-color #222
+
+.upwork
+  .card-front
+    background-color #37a000
+
+
+// ---- PORTRAIT ---- //
+// Mobile
+@media screen and (orientation: portrait) and (max-width: 767px)
+  .profiles
+    flex-wrap wrap
+
+    .card
+      .card-flipper
+        .card-front,
+        .card-back
+          .logo
+            img
+              max-width 80%
+
+  .card,
+  .link,
+  .card-front,
+  .card-back
+    height 50vh
+    width 100vw
+
+
+// Tablet
+@media screen and (orientation: portrait) and (min-width: 768px)
+  .profiles
+    flex-wrap wrap
+
+    .card
+      .card-flipper
+        .card-front,
+        .card-back
+          .logo
+            img
+              max-width 80%
+
+  .card,
+  .link,
+  .card-front,
+  .card-back
+    height 40vh
+    width 50vw
+    max-width 100%
+
+
+// ---- LANDSCAPE ---- //
+// Mobile
+@media screen and (orientation: landscape) and (max-width: 773px)
+  .profiles
+    flex 0 1 auto
+    flex-wrap wrap
+
+    .card
+      .card-flipper
+        .card-front,
+        .card-back
+          .logo
+            img
+              max-width 90%
+
+  .card
+  .link,
+  .card-front,
+  .card-back
+    height 100vh
+    width 50vw
+
+
+// Tabet
+@media screen and (orientation: landscape) and (min-width: 774px)
+  .profiles
+    flex-wrap nowrap
+
+    .card
+      .card-flipper
+        .card-front,
+        .card-back
+          .logo
+            img
+              max-width 90%
+
+  .card
+  .link,
+  .card-front,
+  .card-back
+    height 40vh
+    width 25vw
+    max-width 100%
+>>>>>>> 070d386dbac8b85a7f32b73317714c49ca55b0ad
