@@ -4,7 +4,7 @@
   flex-wrap wrap
 
   .company
-    display flex
+    display none
     align-items center
     justify-content center
     flex-grow 1
@@ -12,6 +12,9 @@
     background-size cover
     background-position center
     background-repeat no-repeat
+
+    &.active
+      display flex
 
     .mask
       position absolute
@@ -45,6 +48,7 @@
           margin 0
           margin-bottom 5px
           font-size 1.5em
+          color white
 
       .description
         display none
@@ -59,6 +63,7 @@
 
         p
           font-size 1.1em
+          color white
 
         button
           margin 25px 4px 0
@@ -118,7 +123,8 @@
       .content
         .header
           img.logo
-            width 200px
+            width 20vw
+            min-width 150px
 
     &.smartprofyl
       .hover
@@ -127,7 +133,8 @@
       .content
         .header
           img.logo
-            width 300px
+            width 30vw
+            min-width 225px
 
     &.pairable
       .hover
@@ -136,7 +143,8 @@
       .content
         .header
           img.logo
-            width 225px
+            width 22.5vw
+            min-width 200px
 
     &.movietv
       .hover
@@ -145,7 +153,8 @@
       .content
         .header
           img.logo
-            width 200px
+            width 20vw
+            min-width 150px
 
     &.prodigy
       .hover
@@ -154,7 +163,8 @@
       .content
         .header
           img.logo
-            width 250px
+            width 25vw
+            min-width 200px
 
     &.atsc
       .hover
@@ -163,7 +173,8 @@
       .content
         .header
           img.logo
-            width 300px
+            width 30vw
+            min-width 250px
 
 
 
@@ -180,7 +191,13 @@
     width 50vw
     max-width 50%
 
-@media screen and (orientation: landscape) and (max-width 1023px)
+@media screen and (orientation: landscape) and (max-width: 735px)
+  .company
+    height 65vw
+    width 100vw
+    max-width 100%
+
+@media screen and (orientation: landscape) and (min-width: 736px) and (max-width: 1023px)
   .company
     height 35vw
     width 50vw

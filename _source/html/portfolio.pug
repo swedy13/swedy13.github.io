@@ -1,6 +1,6 @@
 section#portfolio.portfolio
   |{% for post in site.categories.company %}
-  div(class="company {{post.categories[0]}}" style="background-image: url('assets/images/posts/thumbnails/{{post.thumbnail}}')")
+  div(class="active company {{post.categories[0]}} {{post.categories[1]}} {{post.categories[2]}} {{post.categories[3]}} {{post.categories[4]}} {{post.categories[5]}}" style="background-image: url('assets/images/posts/thumbnails/{{post.thumbnail}}')")
     .mask
     .hover
     .content

@@ -1,5 +1,5 @@
 body {
-  margin: 0px;
+  margin: 0;
   font-family: roboto, sans-serif;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -10,6 +10,10 @@ h1,
 h2,
 h3 {
   cursor: default;
+  color: #242424;
+}
+p {
+  font-size: 16px;
 }
 button {
   cursor: pointer;
@@ -32,7 +36,7 @@ button {
   border: none;
 }
 .hero .content {
-  z-index: 1;
+  z-index: 2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -52,7 +56,6 @@ button {
   max-width: 100%;
 }
 .hero .content .preloader {
-  z-index: 100;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -187,7 +190,99 @@ button {
     width: 3.5em;
   }
 }
+.services {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.services .intro {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.services .intro > h2.title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 3em;
+}
+.services .intro > p.description {
+  width: 85%;
+  margin: 0 auto;
+  font-size: 1.3em;
+  font-weight: 300;
+  line-height: 1.75em;
+}
+.services .service-section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  text-align: center;
+}
+.services .service-section .service {
+  width: 15vw;
+  min-width: 175px;
+  margin: 10px;
+  padding: 25px;
+  border: 1px solid #aaa;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+.services .service-section .service:hover {
+  background-color: #5f9ea0;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.services .service-section .service:hover > img.icon {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.services .service-section .service:hover > h3.title {
+  color: #fff;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.services .service-section .service:hover > p.description {
+  color: #fff;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.services .service-section .service > img.icon {
+  height: 75px;
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+.services .service-section .service > h3.title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 25px;
+  font-size: 1.1em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.services .service-section .service > p.description {
+  font-size: 1em;
+}
 .filters {
+  z-index: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -204,7 +299,8 @@ button {
   height: 65px;
   width: 100vw;
   max-width: 100%;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ccc;
+  background-color: #eee;
 }
 .filters .platform,
 .filters .type,
@@ -230,7 +326,7 @@ button {
           justify-content: space-between;
   width: 100%;
   padding: 8px 12px;
-  background-color: #e5e5e5;
+  background-color: #fff;
   outline: none;
   border: 1px solid #ddd;
   -webkit-border-radius: 5px;
@@ -320,13 +416,11 @@ button {
           flex-wrap: wrap;
 }
 .portfolio .company {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
+              -ms-grid-row-align: center;
           align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -340,6 +434,12 @@ button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.portfolio .company.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 .portfolio .company .mask {
   position: absolute;
@@ -379,6 +479,7 @@ button {
   margin: 0;
   margin-bottom: 5px;
   font-size: 1.5em;
+  color: #fff;
 }
 .portfolio .company .content .description {
   display: none;
@@ -393,6 +494,7 @@ button {
 }
 .portfolio .company .content .description p {
   font-size: 1.1em;
+  color: #fff;
 }
 .portfolio .company .content .description button {
   margin: 25px 4px 0;
@@ -445,37 +547,43 @@ button {
   background-color: #07b977;
 }
 .portfolio .company.sage .content .header img.logo {
-  width: 200px;
+  width: 20vw;
+  min-width: 150px;
 }
 .portfolio .company.smartprofyl .hover {
   background-color: #0076a3;
 }
 .portfolio .company.smartprofyl .content .header img.logo {
-  width: 300px;
+  width: 30vw;
+  min-width: 225px;
 }
 .portfolio .company.pairable .hover {
   background-color: #bdb76b;
 }
 .portfolio .company.pairable .content .header img.logo {
-  width: 225px;
+  width: 22.5vw;
+  min-width: 200px;
 }
 .portfolio .company.movietv .hover {
   background-color: #2f4f4f;
 }
 .portfolio .company.movietv .content .header img.logo {
-  width: 200px;
+  width: 20vw;
+  min-width: 150px;
 }
 .portfolio .company.prodigy .hover {
   background-color: #87ceeb;
 }
 .portfolio .company.prodigy .content .header img.logo {
-  width: 250px;
+  width: 25vw;
+  min-width: 200px;
 }
 .portfolio .company.atsc .hover {
   background-color: #e62c2c;
 }
 .portfolio .company.atsc .content .header img.logo {
-  width: 300px;
+  width: 30vw;
+  min-width: 250px;
 }
 @media screen and (orientation: portrait) and (max-width: 767px) {
   .company {
@@ -491,7 +599,14 @@ button {
     max-width: 50%;
   }
 }
-@media screen and (orientation: landscape) and (max-width: 1023px) {
+@media screen and (orientation: landscape) and (max-width: 735px) {
+  .company {
+    height: 65vw;
+    width: 100vw;
+    max-width: 100%;
+  }
+}
+@media screen and (orientation: landscape) and (min-width: 736px) and (max-width: 1023px) {
   .company {
     height: 35vw;
     width: 50vw;
