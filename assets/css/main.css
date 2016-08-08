@@ -18,6 +18,11 @@ p {
 button {
   cursor: pointer;
 }
+input,
+textarea,
+button {
+  outline: none;
+}
 @media screen and (orientation: portrait) and (min-width: 768px) {
   a,
   p {
@@ -710,4 +715,130 @@ footer .social a .link .contact-caption {
             justify-content: space-between;
     width: 98%;
   }
+}
+footer form.contact-form {
+  z-index: 100;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15% 15%;
+  background-color: #fff;
+}
+footer form.contact-form .title {
+  height: 50px;
+  font-size: 1.5em;
+}
+footer form.contact-form .options {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: -webkit-calc(100% - 70px);
+  width: calc(100% - 70px);
+  margin: 0 auto 50px;
+  padding: 25px;
+  background-color: #f8f8f8;
+}
+footer form.contact-form .options > span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 12px 0;
+  padding: 12px 25px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+}
+footer form.contact-form .options > span:hover {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 2px #ccc, 0 2px 5px #e5e5e5;
+          box-shadow: 0 0 2px #ccc, 0 2px 5px #e5e5e5;
+}
+footer form.contact-form .options > span > input {
+  height: 17px;
+  width: 17px;
+  margin-right: 8px;
+}
+footer form.contact-form .options > span > p {
+  margin: 0;
+}
+footer form.contact-form > input,
+footer form.contact-form > textarea {
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+footer form.contact-form > input {
+  display: inline-block;
+  width: -webkit-calc(50% - 48px);
+  width: calc(50% - 48px);
+  min-width: 150px;
+  margin: 25px 10px;
+}
+footer form.contact-form > textarea {
+  width: -webkit-calc(100% - 48px);
+  width: calc(100% - 48px);
+  font-family: inherit;
+}
+footer form.contact-form > input[type="submit"] {
+  width: 25%;
+  background-color: #4169e1;
+  border: none;
+  font-size: 1.2em;
+  color: #fff;
+}
+footer form.contact-form > input[type="submit"]:hover {
+  background-color: #355ccf;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+footer form.contact-form .close {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  top: 25px;
+  right: 25px;
+  overflow: hidden;
+}
+footer form.contact-form .close:hover::before,
+footer form.contact-form .close:hover::after {
+  background-color: #00f;
+}
+footer form.contact-form .close::before,
+footer form.contact-form .close::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background: #000;
+}
+footer form.contact-form .close::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+footer form.contact-form .close::after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
