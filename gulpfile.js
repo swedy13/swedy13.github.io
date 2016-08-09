@@ -46,9 +46,8 @@ gulp.task('move-js', function() {
 });
 
 gulp.task('move-img', function() {
-				return gulp.src('assets/img/**')
-															.pipe(gulp.dest('_site/assets/img'))
-															.pipe(browserSync.reload({stream:true}));
+				return gulp.src('assets/images/**')
+															.pipe(gulp.dest('_site/assets/img'));
 });
 
 
