@@ -196,7 +196,6 @@ button {
   }
 }
 .services {
-  max-width: 100%;
   margin: 0 auto;
   padding: 50px 0;
 }
@@ -419,6 +418,7 @@ button {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  overflow: hidden;
 }
 .portfolio .company {
   display: none;

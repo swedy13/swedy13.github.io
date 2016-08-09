@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 
 				// Filter Methods
-				toggleFilters();
-				toggleCheckBoxes();
-				filterItems();
+				/*toggleFilters();
+							toggleCheckBoxes();
+							filterItems();*/
 });
