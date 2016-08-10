@@ -6,8 +6,16 @@ var unitWidth = parseInt(width) + 'px';
 
 
 $(document).ready(function() {
+				// Preloader (duration, cycleTime, cleanUp)
+				preloader(4000, 750, 5000);
+
+				// Animations (duration)
+				risingWave(4500);
+				textWave(150);
+				textWave(150);
+
 				// Hero Methods
-				getHero();
+				hero();
 				scaleVideoContainer();
 
 				initBannerVideoSize('.video-container .poster img');
@@ -22,13 +30,13 @@ $(document).ready(function() {
 				});
 
 				// pauses the video if not visible
-				$(window).scroll(function() {
-								if (($('.hero').height() - $(window).scrollTop()) < 10) {
-												$('.fillWidth').get(0).pause();
-												return;
-								}
-								$('.fillWidth').get(0).play();
-				});
+				/*$(window).scroll(function() {
+							if (($('.hero').height() - $(window).scrollTop()) < 10) {
+							$('.fillWidth').get(0).pause();
+							return;
+							}
+							$('.fillWidth').get(0).play();
+							});*/
 
 				// Anchor link (smooth scrolling)
 				$('img.more').click(function() {

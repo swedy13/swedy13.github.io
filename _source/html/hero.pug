@@ -1,25 +1,4 @@
-section#hero.hero
-  .content
-    .center
-      img(class="name" src="assets/images/mark-swedberg.svg" onerror="this.src='assets/images/mark-swedberg.png'")
-      h3 a silicon valley web designer
-      img(class='more' src="assets/images/icons/arrow.png")
-    .preloader
-      .circle
-        .wave(style="background-image: url('assets/images/wave.png')")
-        .wave-background
-      .title
-        h3 l
-        h3 o
-        h3 a
-        h3 d
-        h3 i
-        h3 n
-        h3 g
-        h3 .
-        h3 .
-        h3 .
-      a(class="credits" href="https://codepen.io/bbosiljcic/" target="_blank") Animation inspired by @bbosiljcic
+section.dark.hero
   .video
     .filter
     video(class="fillWidth" loop)
@@ -29,3 +8,41 @@ section#hero.hero
       img(src="" alt="")
 
 
+  .content
+    img(class="title image" src="assets/images/mark-swedberg.svg" onerror="this.src='assets/images/mark-swedberg.png'")
+    .subtitle a silicon valley web designer
+    img(class='more pin bottom2' src="assets/images/icons/arrow.png")
+
+  .right-nav
+    .background
+    ul
+      li
+        .bullet.current
+        p.large about
+      li
+        .bullet
+        p.large services
+      li
+        .bullet
+        p.large portfolio
+      li
+        .bullet
+        p.large contact
+
+
+  .dark.preloader
+    .rising-wave
+      .wave(style="background-image: url('assets/images/wave.png')")
+      .wave-background
+    .row.text-wave
+      .letter l
+      .letter o
+      .letter a
+      .letter d
+      .letter i
+      .letter n
+      .letter g
+      .letter .
+      .letter .
+      .letter .
+    a(class="pin bottom left" href="https://codepen.io/bbosiljcic/" target="_blank") Animation inspired by @bbosiljcic

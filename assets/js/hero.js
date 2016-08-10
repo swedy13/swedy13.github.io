@@ -1,54 +1,13 @@
-function getHero() {
+function hero() {
 				var videos = ['Hello-World', 'One-Swan', 'Up'];
 
 				for (let video of videos) {
 								var randomize = Math.floor(Math.random() * 3);
 								var src = `assets\\video\\${videos[randomize]}\\${videos[randomize]}`;
 
-								// Start preloader animatino
-								runPreloader();
-
 								// Loads video
 								getVideo(src);
 				}
-}
-
-function runPreloader() {
-				// Animates the "loading...." text
-				var load = $('.preloader').find('h3');
-				setTimeout(function() {
-								for (var i = 0; i < load.length; i++) {
-												$(load[i]).animate({
-																marginTop: 25,
-																opacity: 1
-												}, 100 + 75*i);
-								}
-				}, 150);
-
-				setTimeout(function() {
-								for (var i = 0; i < load.length; i++) {
-												$(load).animate({
-																marginTop: 35
-												}, 175);
-								}
-				}, 150);
-
-				// Animate waves
-				$('.wave').animate({
-								marginTop: -30,
-								marginLeft: -400
-				}, 4500);
-
-				// Moves the preloader off screen
-				$('.preloader').delay(4000).animate({
-								top: -height,
-								bottom: height,
-				}, 750);
-
-				// Removes preloader node
-				setTimeout(function() {
-							$('.preloader').remove();
-							}, 5000);
 }
 
 function getVideo(src) {
