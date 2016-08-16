@@ -1,20 +1,111 @@
-ul
+.menu
+  display flex
   list-style none
 
-// ---- List Styles ---- //
-ul
-  li
-    display flex
+
+
+// *********************** //
+// ---- GLOBAL STYLES ---- //
+// *********************** //
+// ---- Menu Position ---- //
+.menu.center
+  &:not(.top),
+  &:not(.bottom),
+  &:not(.left),
+  &:not(.right)
+    align-items center
+    justify-content center
+    text-align center
+
+.menu.center
+  &.top,
+  &.bottom
+    justify-content center
+    text-align center
+
+.menu.top
+  align-items flex-start
+
+.menu.bottom
+  align-items flex-end
+
+.menu.center
+  &.left,
+  &.right
     align-items center
 
-    .bullet
-      height 10px
-      width 10px
-      margin-right 8px
-      background-color transparent
-      border 2px solid white
-      border-radius 100%
+.menu.left
+  justify-content flex-start
+  text-align left
 
-      &.current
-        background-color white
-        border-color transparent
+.menu.left
+  justify-content flex-end
+  text-align right
+
+// ---- Menu Color Themes ---- //
+
+
+
+// ************************** //
+// ---- MENU CONTROLLERS ---- //
+// ************************** //
+.menu.bullet
+  display flex
+  align-items center
+  justify-content center
+  height 60px
+  width 50px
+  border-radius 100%
+
+  &:after
+    content ''
+    height 8px
+    width 8px
+    border-radius 100%
+
+  &.light
+    &:after
+      background-color white
+      box-shadow 0 -25px 0 2px white, 0 0 0 2px white, 0 25px 0 2px white
+
+  &.dark
+    &:after
+      background-color #333
+      box-shadow 0 -25px 0 2px #333, 0 0 0 2px #333, 0 25px 0 2px #333
+
+
+
+
+// ************************** //
+// ---- HORIZONTAL MENUS ---- //
+// ************************** //
+.menu:not(.vertical)
+  flex-wrap nowrap
+
+// ----- Menu Size ---- //
+// ----- Menu Spacing ---- //
+.menu.tight
+  align-content center
+
+.menu.comfortable
+  align-content space-around
+
+.menu.spacious
+  align-content space-between
+
+
+
+// ************************ //
+// ---- VERTICAL MENUS ---- //
+// ************************ //
+.menu.vertical
+  flex-wrap wrap
+
+.menu.vertical *
+  &:not(.bullet)
+    width 100%
+
+// ---- Menu Size ---- //
+.menu.vertical
+  &.fluid
+    width 100%

@@ -1,0 +1,96 @@
+// NOTE: The #drawer-controller needs to be placed in the main body content
+// in order to operate the drawer. (See drawer.js)
+
+
+
+//---- Variables ---- //
+$drawerSM = 100px
+$drawerMD = 150px
+$drawerLG = 200px
+
+
+
+// ************************** //
+// ---- DRAWER CONTAINER ---- //
+// ************************** //
+.drawer-container
+  visibility hidden
+  position relative
+  transition .15s
+
+
+// ---- Container Animation ---- //
+.open
+  visibility visible
+
+
+// ---- Container Size ---- //
+.drawer-container&:not(.open)
+  &.small, &.medium, &.large
+    width 0px
+    min-width 0px
+
+.drawer-container
+  &.small
+    width $drawerSM
+    min-width $drawerSM
+
+  &.medium
+    width $drawerMD
+    min-width $drawerMD
+
+  &.large
+    width $drawerLG
+    min-width $drawerLG
+
+
+
+// **************** //
+// ---- DRAWER ---- //
+// **************** //
+.drawer
+  display flex
+  align-content space-between
+  flex-wrap wrap
+  position fixed
+  height 100%
+  width inherit
+
+
+// ---- Drawer Color ---- //
+.drawer.light
+  background-color #eee
+  // box-shadow inset 2px 0 5px #555
+
+.drawer.dark
+  background-color #333
+  // box-shadow inset 2px 0 5px #151515
+
+
+
+// ***************** //
+// ---- SHELVES ---- //
+// ***************** //
+.shelf
+  display flex
+  justify-content center
+  flex-wrap wrap
+  width 100%
+
+// ---- Shelf Size ---- //
+.drawer
+  &.three
+    > .shelf
+      height 33%
+
+
+// ---- Shelf Position ---- //
+.shelf:not(.top),
+.shelf:not(.bottom)
+  align-items center
+
+.shelf.top
+  align-items flex-start
+
+.shelf.bottom
+  align-items flex-end

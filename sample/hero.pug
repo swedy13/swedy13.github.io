@@ -1,0 +1,51 @@
+#checkerboard
+  .three.column
+    .three.center.row
+      .full.center.red.container checkerboard
+      .full.center.yellow.container checkerboard
+      .full.center.blue.container checkerboard
+    .three.center.row
+      .full.center.green.container checkerboard
+      .full.center.red.container checkerboard
+      .full.center.yellow.container checkerboard
+    .three.center.row
+      .full.center.blue.container checkerboard
+      .full.center.green.container checkerboard
+      .full.center.red.container checkerboard
+
+#concentric-cirlces
+  .fluid.center.column
+    .fill.full.center.row
+      .full.center.green.container
+        .fill.two.third.super.center.column
+          .fill.two.third.center.row
+            .full.center.blue.container
+              .fill.one.third.super.center.column
+                .fill.one.third.center.row
+                  .full.center.yellow.container
+                    p concentric circles
+
+#corners
+  .fluid.column
+    .full.row
+      .two.column
+        .fill.half.row
+          .top.left.full.container
+            .red.fourth.center.container
+              p top left
+        .fill.half.row
+          .top.right.full.container
+            .yellow.fourth.center.container
+              p top right
+      .two.column
+        .half.row
+          .bottom.left.full.container
+            .green.fourth.center.container
+              p bottom left
+        .half.row
+          .bottom.right.full.container
+            .blue.fourth.center.container
+              p bottom right
+      .center.sticky.fourth.container
+        .center.sticky.fourth.container(style="background-color: black")
+          p(style="color: white;") center

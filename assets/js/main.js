@@ -1,3 +1,7 @@
+// Imports
+var hero = './hero.js';
+
+
 // Global dimensions
 var height = $(window).height() + 5;
 var unitHeight = parseInt(height) + 'px';
@@ -7,17 +11,17 @@ var unitWidth = parseInt(width) + 'px';
 
 $(document).ready(function() {
 				// Preloader (duration, cycleTime, cleanUp)
-				preloader(4000, 750, 5000);
+				/*preloader(4000, 750, 5000);*/
 
 				// Animations (duration)
-				risingWave(4500);
-				textWave(150);
-				textWave(150);
+				/*risingWave(4500);
+							textWave(150);
+							textWave(150);*/
 
 				// Hero Methods
 				hero();
+				drawer('hover');
 				scaleVideoContainer();
-
 				initBannerVideoSize('.video-container .poster img');
 				initBannerVideoSize('.video-container .filter');
 				initBannerVideoSize('.video-container video');
