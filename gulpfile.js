@@ -2,6 +2,7 @@ var gulp								= require('gulp');
 var browserSync = require('browser-sync');
 var flatten					= require('gulp-flatten');
 var stylus						= require('gulp-stylus');
+var image       = require('gulp-image');
 var prefix						= require('gulp-autoprefixer');
 var pug								 = require('gulp-pug');
 var child							= require('child_process');
@@ -32,6 +33,19 @@ gulp.task('compile-css', function() {
 });
 
 
+// OPTIMIZATION
+// Must run the image task separately (to save load time)
+gulp.task('optimize-img', function() {
+				return gulp.src('_source/images/**')
+															.pipe(image({
+																			pngquant: true,
+																			optipng: true,
+																			zopflipng: true
+															}))
+															.pipe(gulp.dest('assets/images'));
+});
+
+
 // RELOCATION
 gulp.task('move-css', function() {
 				return gulp.src('assets/css/main.css')
@@ -43,11 +57,6 @@ gulp.task('move-js', function() {
 				return gulp.src('assets/js/**')
 															.pipe(gulp.dest('_site/assets/js'))
 															.pipe(browserSync.reload({stream:true}));
-});
-
-gulp.task('move-img', function() {
-				return gulp.src('assets/images/**')
-															.pipe(gulp.dest('_site/assets/img'));
 });
 
 
@@ -79,7 +88,6 @@ gulp.task('watch', function() {
 				gulp.watch('_source/**/*.styl', ['compile-css']);
 				gulp.watch('assets/css/**', ['move-css']);
 				gulp.watch('assets/js/**', ['move-js']);
-				gulp.watch('assets/img/**', ['move-img']);
 });
 
 
@@ -90,7 +98,6 @@ gulp.task('run', function(callback) {
 								'compile-css',
 								'move-css',
 								'move-js',
-								'move-img',
 								'jekyll-build',
 								'serve',
 								callback

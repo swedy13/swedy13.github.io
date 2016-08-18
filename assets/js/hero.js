@@ -9,9 +9,17 @@ function hero() {
 							}, 3000);*/
 				getVideo(src);
 
+				if (!String.prototype.includes) {
+								String.prototype.includes = function() {
+												'use strict';
+												return String.prototype.indexOf.apply(this, arguments) !== -1;
+								};
+				}
+
 				if (src.includes('birdcatcher')) {
 								$('#hero').find('.bullet').removeClass('light').addClass('dark');
 								$('.drawer').removeClass('light').addClass('dark');
+								/*$('#nav').find('.banner > img').removeClass('darken');*/
 				}
 }
 

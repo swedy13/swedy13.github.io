@@ -1,0 +1,56 @@
+// ---- Banner Content ---- //
+.banner
+  display flex
+  align-items center
+  justify-content center
+  height 50px
+
+  img
+    max-height 50%
+
+
+// ---- Banner Styles ---- //
+.banner
+  &.stacked
+    border-top 1px solid #999
+
+    &.dashed
+      border 0
+      border-top 1px solid #999
+
+    &.dashed
+      border-style dashed
+
+  &.dashed
+    border 1px solid #999
+
+
+// ---- Banner Colors ---- //
+.banner
+  &.ghost
+    background-color transparent
+
+  &.light
+    background-color #eee
+
+  &.dark
+    background-color #333
+
+.banner:hover
+  transition .15s ease-out
+
+  > img
+    filter brightness(1)
+    transition-delay .05s
+
+  &.quora
+    background-color quora
+
+  &.github
+    background-color github
+
+  &.linkedin
+    background-color linkedin
+
+  &.upwork
+    background-color upwork

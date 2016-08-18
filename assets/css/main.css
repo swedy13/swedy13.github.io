@@ -512,9 +512,21 @@ p.largest {
 }
 .drawer.light {
   background-color: #eee;
+  -webkit-box-shadow: inset 2px 0 5px #555;
+          box-shadow: inset 2px 0 5px #555;
+}
+.drawer.light .banner:hover {
+  -webkit-box-shadow: inset 5px 0 5px -3px #555;
+          box-shadow: inset 5px 0 5px -3px #555;
 }
 .drawer.dark {
   background-color: #333;
+  -webkit-box-shadow: inset 2px 0 5px #151515;
+          box-shadow: inset 2px 0 5px #151515;
+}
+.drawer.dark .banner:hover {
+  -webkit-box-shadow: inset 5px 0 5px -3px #151515;
+          box-shadow: inset 5px 0 5px -3px #151515;
 }
 .shelf {
   display: -webkit-box;
@@ -681,7 +693,7 @@ p.largest {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.menu.vertical *:not(.bullet) {
+.menu.vertical > *:not(.bullet) {
   width: 100%;
 }
 .menu.vertical.fluid {
@@ -709,4 +721,70 @@ p.largest {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+img.darken {
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+.banner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+}
+.banner img {
+  max-height: 50%;
+}
+.banner.stacked {
+  border-top: 1px solid #999;
+}
+.banner.stacked.dashed {
+  border: 0;
+  border-top: 1px solid #999;
+}
+.banner.stacked.dashed {
+  border-style: dashed;
+}
+.banner.dashed {
+  border: 1px solid #999;
+}
+.banner.ghost {
+  background-color: transparent;
+}
+.banner.light {
+  background-color: #eee;
+}
+.banner.dark {
+  background-color: #333;
+}
+.banner:hover {
+  -webkit-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
+.banner:hover > img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+.banner:hover.quora {
+  background-color: #a82400;
+}
+.banner:hover.github {
+  background-color: #666;
+}
+.banner:hover.linkedin {
+  background-color: #0e76a8;
+}
+.banner:hover.upwork {
+  background-color: #32cd32;
 }
