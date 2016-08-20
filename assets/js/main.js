@@ -33,14 +33,28 @@ $(document).ready(function() {
 								scaleBannerVideoSize('.video-container video');
 				});
 
-				// pauses the video if not visible
-				/*$(window).scroll(function() {
-							if (($('.hero').height() - $(window).scrollTop()) < 10) {
-							$('.fillWidth').get(0).pause();
-							return;
-							}
-							$('.fillWidth').get(0).play();
-							});*/
+
+				// ---- VIDEO UX ---- //
+				// Pauses the video when not on screen
+				$(window).scroll(function() {
+								if (($('#hero').height() - $(window).scrollTop()) < 10) {
+												$('#hero-video').get(0).pause();
+												return;
+								}
+								$('#hero-video').get(0).play();
+				});
+
+				// Pauses the video when the user is in a different tab/program
+				$(window).blur(function() {
+								$('#hero-video').get(0).pause();
+				});
+
+				$(window).focus(function() {
+								if (($('#hero').height() - $(window).scrollTop()) > 10) {
+												$('#hero-video').get(0).play();
+								}
+				});
+
 
 				// Anchor link (smooth scrolling)
 				$('img.more').click(function() {

@@ -361,6 +361,17 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.pin.wrap,
+.sticky.wrap {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 .pin.top.center,
 .sticky.top.center,
 .pin.bottom.center,
@@ -409,6 +420,11 @@ main {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+@font-face {
+  font-family: Marck;
+  font-style: normal;
+  src: url("../fonts/Marck.ttf");
 }
 body {
   font-family: roboto, sans-serif;
@@ -468,6 +484,35 @@ p.largest {
 .green {
   background-color: #008000;
 }
+.logo {
+  font-family: Marck;
+}
+.subtitle {
+  font-size: 3em;
+  font-weight: 300;
+}
+.logo {
+  font-size: 7.5em;
+}
+.logo.mini {
+  font-size: 2em;
+}
+.logo.light,
+.subtitle.light {
+  color: #999;
+}
+.logo.white,
+.subtitle.white {
+  color: #fff;
+}
+.logo.shadow,
+.subtitle.shadow {
+  text-shadow: 0 1px 2px #555;
+}
+.logo.watermark,
+.subtitle.watermark {
+  opacity: 0.5;
+}
 .drawer-container {
   visibility: hidden;
   position: relative;
@@ -515,7 +560,7 @@ p.largest {
   -webkit-box-shadow: inset 2px 0 5px #555;
           box-shadow: inset 2px 0 5px #555;
 }
-.drawer.light .banner:hover {
+.drawer.light .shadow:hover {
   -webkit-box-shadow: inset 5px 0 5px -3px #555;
           box-shadow: inset 5px 0 5px -3px #555;
 }
@@ -524,7 +569,7 @@ p.largest {
   -webkit-box-shadow: inset 2px 0 5px #151515;
           box-shadow: inset 2px 0 5px #151515;
 }
-.drawer.dark .banner:hover {
+.drawer.dark .shadow:hover {
   -webkit-box-shadow: inset 5px 0 5px -3px #151515;
           box-shadow: inset 5px 0 5px -3px #151515;
 }
@@ -633,6 +678,35 @@ p.largest {
           justify-content: flex-end;
   text-align: right;
 }
+.item.dark {
+  color: #333;
+}
+.item.gray {
+  color: #777;
+}
+.item.caps {
+  font-variant: small-caps;
+}
+.item.large {
+  font-size: 1.2em;
+}
+.item.thick {
+  font-weight: 500;
+}
+.item.expand:hover,
+.item.expand.active {
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+.item.highlight:hover {
+  color: #eee;
+}
+.item.darklight:hover {
+  color: #333;
+}
 .menu.bullet {
   display: -webkit-box;
   display: -webkit-flex;
@@ -673,17 +747,17 @@ p.largest {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
 }
-.menu.tight {
+.menu:not(.vertical).menu.tight {
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
           align-content: center;
 }
-.menu.comfortable {
+.menu:not(.vertical).menu.comfortable {
   -webkit-align-content: space-around;
       -ms-flex-line-pack: distribute;
           align-content: space-around;
 }
-.menu.spacious {
+.menu:not(.vertical).menu.spacious {
   -webkit-align-content: space-between;
       -ms-flex-line-pack: justify;
           align-content: space-between;
@@ -698,6 +772,15 @@ p.largest {
 }
 .menu.vertical.fluid {
   width: 100%;
+}
+.menu.vertical.tight > .item {
+  margin: 0;
+}
+.menu.vertical.comfortable > .item {
+  margin: 8px 0;
+}
+.menu.vertical.spacious > .item {
+  margin: 15px 0;
 }
 .video {
   display: -webkit-box;
@@ -742,16 +825,16 @@ img.darken {
   height: 50px;
 }
 .banner img {
-  max-height: 50%;
+  max-height: 25px;
 }
-.banner.stacked {
+.banner.border {
   border-top: 1px solid #999;
 }
-.banner.stacked.dashed {
+.banner.border.dashed {
   border: 0;
   border-top: 1px solid #999;
 }
-.banner.stacked.dashed {
+.banner.border.dashed {
   border-style: dashed;
 }
 .banner.dashed {
@@ -770,12 +853,6 @@ img.darken {
   -webkit-transition: 0.15s ease-out;
   transition: 0.15s ease-out;
 }
-.banner:hover > img {
-  -webkit-filter: brightness(1);
-          filter: brightness(1);
-  -webkit-transition-delay: 0.05s;
-          transition-delay: 0.05s;
-}
 .banner:hover.quora {
   background-color: #a82400;
 }
@@ -787,4 +864,10 @@ img.darken {
 }
 .banner:hover.upwork {
   background-color: #32cd32;
+}
+.banner:hover img.hover.darken {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
 }

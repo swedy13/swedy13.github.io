@@ -36,6 +36,7 @@ gulp.task('compile-css', function() {
 // OPTIMIZATION
 // Must run the image task separately (to save load time)
 gulp.task('optimize-img', function() {
+				del('assets/images');
 				return gulp.src('_source/images/**')
 															.pipe(image({
 																			pngquant: true,

@@ -42,7 +42,45 @@
   justify-content flex-end
   text-align right
 
-// ---- Menu Color Themes ---- //
+
+// ---- Item Colors ---- //
+.item.dark
+  color #333
+
+.item.gray
+  color #777
+
+
+// ---- Item Styles ---- //
+.item.caps
+  font-variant small-caps
+
+
+// ---- Item Sizes ---- //
+.item.large
+  font-size 1.2em
+
+
+// ---- Item Weights ---- //
+.item.thick
+  font-weight 500
+
+
+// ---- Item Effects ---- //
+.item.expand
+  &:hover,
+  &.active
+    transform scale(1.25)
+    transition .15s
+
+.item.highlight
+  &:hover
+    color #eee
+
+.item.darklight
+  &:hover
+    color #333
+
 
 
 
@@ -83,15 +121,16 @@
   flex-wrap nowrap
 
 // ----- Menu Size ---- //
-// ----- Menu Spacing ---- //
-.menu.tight
-  align-content center
+// ----- Horizontal Spacing ---- //
+.menu:not(.vertical)
+  &.menu.tight
+    align-content center
 
-.menu.comfortable
-  align-content space-around
+  &.menu.comfortable
+    align-content space-around
 
-.menu.spacious
-  align-content space-between
+  &.menu.spacious
+    align-content space-between
 
 
 
@@ -109,3 +148,17 @@
 .menu.vertical
   &.fluid
     width 100%
+
+// ---- Vertical Spacing ---- //
+.menu.vertical
+  &.tight
+    > .item
+      margin 0
+
+  &.comfortable
+    > .item
+      margin 8px 0
+
+  &.spacious
+    > .item
+      margin 15px 0

@@ -9,10 +9,16 @@ function drawer(event) {
 				function open() {
 								container.addClass('open');
 								controller.addClass('hidden');
+								content.find('.content').stop().animate({
+												right: '150px'
+								}, 115);
 				}
 				function close() {
 								container.removeClass('open');
 								controller.removeClass('hidden');
+								content.find('.content').stop().animate({
+												right: 0
+								}, 115);
 				}
 
 

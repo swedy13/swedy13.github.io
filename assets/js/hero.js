@@ -19,7 +19,7 @@ function hero() {
 				if (src.includes('birdcatcher')) {
 								$('#hero').find('.bullet').removeClass('light').addClass('dark');
 								$('.drawer').removeClass('light').addClass('dark');
-								/*$('#nav').find('.banner > img').removeClass('darken');*/
+								$('.drawer').find('.darklight').removeClass('darklight').addClass('highlight');
 				}
 }
 
