@@ -140,6 +140,11 @@
 .menu.vertical
   flex-wrap wrap
 
+@media screen and (orientation: landscape) and (max-width: 767px)
+  .menu.vertical
+    &.rotate
+      flex-wrap nowrap
+
 .menu.vertical > *
   &:not(.bullet)
     width 100%

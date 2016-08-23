@@ -30,18 +30,27 @@ $drawerLG = 200px
     width 0px
     min-width 0px
 
-.drawer-container
-  &.small
-    width $drawerSM
-    min-width $drawerSM
+@media screen and (max-width: 767px)
+  .drawer-container
+    &.small,
+    &.medium,
+    &.large
+      width 90%
+      min-width 90%
 
-  &.medium
-    width $drawerMD
-    min-width $drawerMD
+@media screen and (min-width: 768px)
+  .drawer-container
+    &.small
+      width $drawerSM
+      min-width $drawerSM
 
-  &.large
-    width $drawerLG
-    min-width $drawerLG
+    &.medium
+      width $drawerMD
+      min-width $drawerMD
+
+    &.large
+      width $drawerLG
+      min-width $drawerLG
 
 
 
@@ -84,13 +93,13 @@ $drawerLG = 200px
   display flex
   justify-content center
   flex-wrap wrap
-  width 100%
+  flex-basis 100%
 
 // ---- Shelf Size ---- //
 .drawer
   &.three
     > .shelf
-      height 33%
+      // height 33%
 
 
 // ---- Shelf Position ---- //
@@ -103,3 +112,9 @@ $drawerLG = 200px
 
 .shelf.bottom
   align-items flex-end
+
+.shelf
+  padding 8px
+
+  &.tight
+    padding 0px
