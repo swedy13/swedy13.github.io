@@ -1,10 +1,12 @@
 var gulp								= require('gulp');
 var browserSync = require('browser-sync');
+var noCom       = require('gulp-strip-comments');
 var pug								 = require('gulp-pug');
 var flatten					= require('gulp-flatten');
 var htmlMin     = require('gulp-htmlmin');
 var stylus						= require('gulp-stylus');
 var prefix						= require('gulp-autoprefixer');
+var noCssCom    = require('gulp-strip-css-comments');
 var cssMin      = require('gulp-clean-css');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
@@ -23,6 +25,7 @@ gulp.task('compile-html', function() {
 				return gulp.src('_source/**/*.pug')
 															.pipe(pug())
 															.pipe(flatten())
+															.pipe(noCom())
 															.pipe(htmlMin())
 															.pipe(gulp.dest('_includes'));
 });
@@ -34,6 +37,7 @@ gulp.task('compile-css', function() {
 																			onError: browserSync.notify
 															}))
 															.pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
+															.pipe(noCssCom())
 															.pipe(cssMin())
 															.pipe(gulp.dest('assets/css'));
 });
@@ -62,6 +66,7 @@ gulp.task('move-css', function() {
 gulp.task('move-js', function() {
 				return gulp.src('assets/js/**')
 				/*.pipe(concat('main.js'))*/
+															.pipe(noCom())
 				/*.pipe(uglify())*/
 															.pipe(gulp.dest('_site/assets/js'))
 															.pipe(browserSync.reload({stream:true}));
