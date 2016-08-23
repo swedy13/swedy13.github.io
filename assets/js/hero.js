@@ -56,7 +56,10 @@ function getVideo(src) {
 				}
 
 				video.play();
-				video.loop = true;
+				video.on('ended', function() {
+								video.currentTime - 0.1;
+								video.play();
+				});
 	}
 
 function scaleVideoContainer() {
