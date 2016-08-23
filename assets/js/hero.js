@@ -42,6 +42,19 @@ function getVideo(src) {
 								video.appendChild($this);
 				}
 
+				// Mobile Autoplay
+				// Video is disabled in Mobile browsers without user interaction
+				if (video.currentTime === 0) {
+								var touchType = ['tap', 'press', 'swipeleft', 'swiperight'];
+								for (var i = 0; i < touchType.length; i++) {
+												$('main').hammer().on(touchType[i], function() {
+																console.log('touch');
+																video.play();
+												});
+								}
+								return;
+				}
+
 				video.play();
 				video.loop = true;
 	}
