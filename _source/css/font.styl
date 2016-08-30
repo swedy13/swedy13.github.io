@@ -15,12 +15,49 @@ p, h1, h2, h3, h4
   color #242424
   cursor default
 
+h1, h2, h3, h4
+  margin-top .5em
+  margin-bottom .5em
+
+p
+  margin-bottom .75em
+  &:last-child
+    margin 0
+
+h1
+  font-size 1.75em
+  font-weight 500
+  font-variant small-caps
+
+h2
+  font-size 1.5em
+  font-weight 500
+
+h3
+  font-size 1.25em
+  font-weight bold
+  text-transform uppercase
+
+h4
+  font-size 1em
+  font-weight bold
+
 a
   color #242424
   text-decoration none
 
   &:visited
     color #242424
+
+
+// ---- Styles ---- //
+// .title
+//   font-size 1.2em
+//   font-weight 400
+//   margin .5em 0
+
+.description
+  line-height 1.5
 
 
 // ---- Color Themes ---- //
@@ -36,7 +73,8 @@ a
 
 
 // ---- Sizes ---- //
-p
+p,
+.font
   font-size 16px
   line-height 1.5
 
@@ -48,3 +86,9 @@ p
 
   &.largest
     font-size 2em
+
+  &.huge
+    font-size 3em
+
+  &.gigantic
+    font-size 6em

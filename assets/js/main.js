@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 				// Hero Methods
 				hero();
-				drawer('hover');
+				drawer();
 				scaleVideoContainer();
 				initBannerVideoSize('.video-container .poster img');
 				initBannerVideoSize('.video-container .filter');
@@ -63,6 +63,16 @@ $(document).ready(function() {
 								$('body').animate({
 												scrollTop: portfolio
 								}, 500);
+				});
+
+
+				// ---- SERVICES ---- //
+				var service = $('#services').find('.ghost.button');
+				service.map(function(i) {
+								var colors = ["burlywood",	"cadetblue", "cornflowerblue", "darkseagreen",	"khaki",	"lightcoral",	"lightgreen",	"lightsalmon",	"lightskyblue",	"lightsteelblue",	"thistle"];
+								var randomize = Math.floor(Math.random() * colors.length);
+								var colorize = colors[randomize];
+								$(this).addClass(colorize);
 				});
 
 

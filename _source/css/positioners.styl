@@ -1,53 +1,52 @@
-// ********************* //
-// ---- STICKY PINS ---- //
-// ********************* //
-// Pins can fix an object's position on the page
+// **************** //
+// ---- PINNED ---- //
+// **************** //
+// Pinned objects have a static position within a relative container
 .pin
-  position fixed
-
-// Pins can position things absolutely on the page
-.sticky
   position absolute
 
+
+// ----- Positioning ---- //
 .pin,
-.sticky
-  display flex
-  top 0
-  bottom 0
-  left 0
-  right 0
-
-// ---- Content Position ---- //
-.pin,
-.sticky
-  &.center
-    align-items center
-    justify-content center
-
-  &.wrap
-    flex-wrap wrap
-    flex-direction column
-
-.pin,
-.sticky
-  &.top,
-  &.bottom
-    &.center
-      justify-content center
-
+.fix
   &.top
-    align-items flex-start
+    top 20px
+    transform translate(-50%, 0)
+
+  &.center
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
 
   &.bottom
-    align-items flex-end
+    top auto
+    bottom 20px
+    transform translate(-50%, 0)
 
-  &.left,
-  &.right
-    &.center
-      align-items center
+  &.top,
+  &.center,
+  &.bottom
+    &.left
+      left 20px
+      transform translate(0, -50%)
 
-  &.left
-    justify-content flex-start
+    &.right
+      left auto
+      right 20px
+      transform translate(0, -50%)
 
-  &.right
-    justify-content flex-end
+
+
+// *************** //
+// ---- FIXED ---- //
+// *************** //
+// Fixed objects have a static position on the screen, regardless of where they are in relation to the page
+.fix
+  position fixed
+
+  // &.right
+  //   right 20px
+
+
+// ---- Positioning ---- //
+// .fixed

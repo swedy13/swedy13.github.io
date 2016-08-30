@@ -2,6 +2,7 @@ function hero() {
 				var videos = ['Hello-World', 'One-Swan', 'Up', 'birdcatcher'];
 				var randomize = Math.floor(Math.random() * 4);
 				var src = 'assets/video/' + videos[randomize] + '/' + videos[randomize];
+				/*var src = 'assets/video/birdcatcher/birdcatcher';*/
 
 				// Creates and inserts and randomized video element into the hero section
 				/*setTimeout(function() {
@@ -17,9 +18,9 @@ function hero() {
 				}
 
 				if (src.includes('birdcatcher')) {
-								$('#hero').find('.bullet').removeClass('light').addClass('dark');
-								$('.drawer').removeClass('light').addClass('dark');
-								$('.drawer').find('.darklight').removeClass('darklight').addClass('highlight');
+								$('#hero').find('label[for="drawer-controller"]').removeClass('light').addClass('dark');
+								$('#drawer').removeClass('light').addClass('dark');
+								$('#drawer').find('.darklight').removeClass('darklight').addClass('highlight');
 				}
 }
 
@@ -52,13 +53,12 @@ function getVideo(src) {
 												var touchType = ['tap', 'press', 'swipeleft', 'swiperight'];
 												for (var i = 0; i < touchType.length; i++) {
 																$('main').hammer().on(touchType[i], function() {
-																				console.log('touch');
 																				video.play();
 																});
 												}
 												return;
 								}
-				}, 500);
+				}, 2500);
 
 				// Mobile Loop
 				// Reloading video is disabled on some mobile browsers
@@ -66,7 +66,7 @@ function getVideo(src) {
 								video.currentTime - 0.1;
 								video.play();
 				}
-	}
+}
 
 function scaleVideoContainer() {
 				$('.homepage-hero-module').css('height',unitHeight);

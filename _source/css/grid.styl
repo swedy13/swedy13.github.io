@@ -1,3 +1,77 @@
+// ****************** //
+// ---- SETTINGS ---- //
+// ****************** //
+// ---- Namespaces ---- //
+$row = 'row'
+$col = 'col'
+
+
+// ---- Gutters ---- //
+$gutter = 15px
+
+
+// ---- Groups ---- //
+$whole   = percentage(1 / 1)
+$half    = percentage(1 / 2)
+$third   = percentage(1 / 3)
+$fourth  = percentage(1 / 4)
+$fifth   = percentage(1 / 5)
+$twelfth = percentage(1 / 12)
+
+
+
+// ***************** //
+// ---- OPTIONS ---- //
+// ***************** //
+// ---- Positioning ---- //
+// Containers are for positioning absolute and fixed items
+.container
+  position relative
+
+// Horizontal
+.center
+  &.self
+    margin-left auto
+    margin-right auto
+
+  &.children
+    text-align center
+
+// Vertical
+.bottom
+  vertical-align bottom
+.middle
+  margin-top auto
+  margin-bottom auto
+
+
+// ---- Spacing ---- //
+.tight
+  &.row,
+    margin-top 0
+    margin-bottom 0
+  &.col > *
+    padding 0
+
+.comfortable
+  &.row,
+    margin-top 1.5*$gutter
+    margin-bottom 1.5*$gutter
+  &.col > *
+    padding 1.5*$gutter
+
+.spacious
+  &.row,
+    margin-top 2*$gutter
+    margin-bottom 2*$gutter
+  &.col > *
+    padding 2*$gutter
+
+
+
+// ***************** //
+// ---- GOLBALS ---- //
+// ***************** //
 main
   position relative
   max-width 100%
@@ -5,256 +79,112 @@ main
 
 
 
-// ***************** //
-// ---- COLUMNS ---- //
-// ***************** //
-
-// Columns control a section's width
-.column
-  display flex
-  position relative
-  overflow hidden
-
-
-// ---- Columns ---- //
-.column
-  width 100%
-
-.column.two
-  &:not(.third)
-    > .row
-      width calc(100vw / 2)
-
-.column.three
-  > .row
-    width calc(100vw / 3)
-
-.column.four
-  > .row
-    width calc(100vw / 4)
-
-
-// ---- Column Size ---- //
-.column.fill
-  height 100%
-
-.column.fluid
-  width 100%
-
-.column.full
-  width 100vw
-
-.column.half
-  width 50vw
-
-.column.third
-  width 33vw
-
-  &.two
-    width 67vw
-
-.column.quarter
-  width 25vw
-
-
-
-// ---- Content Position ---- //
-.column.left
-  justify-content flex-start
-
-.column.center
-  justify-content center
-
-  &.super
-    align-items center
-
-.column.right
-  justify-content flex-end
-
-
-// Pins
-.sticky
-  position fixed
-
-.sticky.left
-  left 0
-
-.sticky.right
-  right 0
-
-
-// ---- Content Spacing ---- //
-.column.tight
-  justify-content center
-
-.column.comfortable
-  justify-content space-around
-
-.column.spacious
-  justify-content space-between
-
-
-
 // ************** //
 // ---- ROWS ---- //
 // ************** //
-
-// Rows control a section's height
-.row
-  display flex
-  flex-wrap wrap
-  flex-direction row
-  position relative
+.{$row}
+  margin $gutter -1*$gutter
+  list-style none
   overflow hidden
 
-// ---- Rows ---- //
-.row
-  &.two,
-  &.three,
-  &.four
-    height 100%
 
-.row.two
-  &:not(.third)
-    > .container
-      height calc(100vh / 2)
-
-.row.three
-  > .container
-    height calc(100vh / 3)
-
-.row.four
-  > .container
-    height calc(100vh / 4)
-
-
-// ---- Row Size ---- //
-.row.fill
-  width 100%
-
-.row.fluid
-  height 100%
-
+// ---- Sizing ---- //
 .row.full
   height 100vh
+  margin-top 0px
+  margin-bottom 0px
 
-.row.half
-  height 50vh
 
-.row.third
-  height 33vh
+// ---- Spacing ---- //
+// .{$row}.no-gutter
+//   width 100%
+//   margin-left 0
+//   .{$col}
+//     padding-left 0
+//   .whole
+//     width $whole
+//     margin-left 0
 
+.tight
+  &.row
+    margin-top 0px
+    margin-bottom 0px
+  &.col
+    padding 0px
+
+.comfortable
+  &.row
+    margin-top 1.5*$gutter
+    margin-bottom 1.5*$gutter
+  &.col
+    padding 1.5*$gutter
+
+.spacious
+  &.row
+    margin-top 2*$gutter
+    margin-bottom 2*$gutter
+  &.col
+    padding 2*$gutter
+
+
+
+
+// ***************** //
+// ---- COLUMNS ---- //
+// ***************** //
+.col
+  display inline-block
+  box-sizing border-box
+  min-height 1px
+  padding $gutter
+  vertical-align top
+
+
+// ---- Sizing ---- //
+// Full width
+.whole
+  width $whole
+
+// Half width
+.half
+  width $half
+
+// Third width
+.third
+  &.one
+    width $third
   &.two
-    height 67vh
+    width $third * 2
 
-.row.quarter
-  height 25vh
+// Quarter width
+.fourth
+  &.one
+    width $fourth
+  &.three
+    width $fourth * 3
 
-
-// ---- Content Position ---- //
-.row.top
-  align-items flex-start
-
-.row.center
-  align-items center
-
-  &.super
-    justify-content center
-
-.row.bottom
-  align-items flex-end
-
-
-// ---- Content Spacing ---- //
-.row.tight
-  align-content center
-
-.row.comfortable
-  align-content space-around
-
-.row.spacious
-  align-content space-between
-
-
-
-// ******************** //
-// ---- CONTAINERS ---- //
-// ******************** //
-.container
-  display flex
-  position relative
-
-// ---- Container Size ---- //
-.container.full
-  height 100%
-  width 100%
-
-.container.tall
-  height 100%
-
-.container.wide
-  width 100%
-
-.container.half
-  height 50%
-  width 50%
-
-.container.third
-  height 33%
-  width 33%
-
+// Fifth width
+.fifth
+  &.one
+    width $fifth
   &.two
-    height 67%
-    width 67%
+    width $fifth * 2
+  &.three
+    width $fifth * 3
+  &.four
+    width $fifth * 4
 
-.container.fourth
-  height 25%
-  width 25%
-
-
-// ---- Content Position ---- //
-.container.center
-  &:not(.top),
-  &:not(.bottom),
-  &:not(.left),
-  &:not(.right)
-    align-items center
-    justify-content center
-    text-align center
-
-.container.center
-  &.top,
-  &.bottom
-    justify-content center
-    text-align center
-
-.container.top
-  align-items flex-start
-
-.container.bottom
-  align-items flex-end
-
-.container.center
-  &.left,
-  &.right
-    align-items center
-
-.container.left
-  justify-content flex-start
-  text-align left
-
-.container.right
-  justify-content flex-end
-  text-align right
-
-
-
-// ---- Content Spacing ---- //
-.container.tight
-  align-content center
-
-.container.comfortable
-  align-content space-around
-
-.container.spacious
-  align-content space-between
+// Twelfth width
+.twelfth
+  &.one
+    width $twelfth
+  &.two
+    width $twelfth * 2
+  &.five
+    width $twelfth * 5
+  &.seven
+    width $twelfth * 7
+  &.ten
+    width $twelfth * 10
+  &.eleven
+    width $twelfth * 11

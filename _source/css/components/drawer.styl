@@ -1,63 +1,60 @@
-// NOTE: The #drawer-controller needs to be placed in the main body content
-// in order to operate the drawer. (See drawer.js)
-
-
-
 //---- Variables ---- //
 $drawerSM = 100px
 $drawerMD = 150px
 $drawerLG = 200px
 
 
+// *************************** //
+// ---- DRAWER CONTROLLER ---- //
+// *************************** //
+#drawer-controller
+  display none
 
-// ************************** //
-// ---- DRAWER CONTAINER ---- //
-// ************************** //
-.drawer-container
-  visibility hidden
-  position relative
-  transition .15s
+  &:checked + #drawer-container
+    visibility visible
 
-
-// ---- Container Animation ---- //
-.open
-  visibility visible
-
-
-// ---- Container Size ---- //
-.drawer-container&:not(.open)
-  &.small, &.medium, &.large
+  &:not(:checked) + #drawer-container
+    visibility hidden
     width 0px
     min-width 0px
+    transition .15s
 
+// The drawer controller is an input that governs the width of the drawer container
 @media screen and (max-width: 767px)
-  .drawer-container
-    &.small,
-    &.medium,
-    &.large
-      width 90%
-      min-width 90%
+  #drawer-controller:checked + #drawer-container
+    width 90%
+    min-width 90%
+    transition .15s
 
 @media screen and (min-width: 768px)
-  .drawer-container
+  #drawer-controller:checked + #drawer-container
+    transition .15s
+
     &.small
       width $drawerSM
       min-width $drawerSM
-
     &.medium
       width $drawerMD
       min-width $drawerMD
-
     &.large
       width $drawerLG
       min-width $drawerLG
 
 
 
-// **************** //
-// ---- DRAWER ---- //
-// **************** //
-.drawer
+// ************************** //
+// ---- DRAWER CONTAINER ---- //
+// ************************** //
+#drawer-container
+  position relative
+  right 0px
+
+
+
+// // **************** //
+// // ---- DRAWER ---- //
+// // **************** //
+#drawer
   display flex
   align-content space-between
   flex-wrap wrap
@@ -67,7 +64,7 @@ $drawerLG = 200px
 
 
 // ---- Drawer Color ---- //
-.drawer.light
+#drawer.light
   background-color #eee
   box-shadow inset 2px 0 5px #555
 
@@ -75,7 +72,7 @@ $drawerLG = 200px
     &:hover
       box-shadow inset 5px 0 5px -3px #555
 
-.drawer.dark
+#drawer.dark
   background-color #333
   box-shadow inset 2px 0 5px #151515
 
@@ -96,10 +93,10 @@ $drawerLG = 200px
   flex-basis 100%
 
 // ---- Shelf Size ---- //
-.drawer
-  &.three
-    > .shelf
-      // height 33%
+// #drawer
+//   &.three
+//     > .shelf
+//      height 33%
 
 
 // ---- Shelf Position ---- //
