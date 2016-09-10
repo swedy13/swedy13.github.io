@@ -27,3 +27,7 @@ function textWave(duration) {
 								}
 				}, duration);
 }
+
+
+// FadeOut
+

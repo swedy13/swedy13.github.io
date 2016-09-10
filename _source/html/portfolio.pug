@@ -1,0 +1,11 @@
+#portfolio.tight.padded.dark.row
+  |{% for post in site.categories.company %}
+  .one.third.col.fadeInLeft
+    div(class="company card {{post.categories[0]}} {{post.categories[1]}} {{post.categories[2]}} {{post.categories[3]}} {{post.categories[4]}} {{post.categories[5]}}" style="background-image: url('assets/images/posts/thumbnails/{{post.thumbnail}}')")
+      .mask
+      .front
+        img(class='logo' src='assets/images/posts/thumbnails/{{post.logo}}')
+      .back
+        .title {{post.title}}
+        .content {{post.content}}
+  |{% endfor %}

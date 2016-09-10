@@ -1,0 +1,78 @@
+#contact
+  z-index 2
+  display flex
+  align-items center
+  justify-content center
+  position fixed
+  top 0
+  bottom 100%
+  left 0
+  right 0
+  height 0px
+  width 100%
+  background #ff7777
+  background -moz-linear-gradient(bottom right,  #ef4646 0%, #ea2e2e 51%, #a50a0a 100%)
+  background -webkit-linear-gradient(top left,  #ef4646 0%, #ea2e2e 51%, #a50a0a 100%)
+  background linear-gradient(to bottom right,  #ef4646 0%, #ea2e2e 51%, #a50a0a 100%)
+  opacity 0
+  transition .15s
+
+  &.popUpLeft
+    bottom 0
+    height 100vh
+    opacity 1
+
+  > .close
+    position fixed
+    text-align center
+    top 15px
+    right 15px
+    height 28px
+    width 28px
+    border 3px solid white
+    border-radius 100%
+    font-size 1.5em
+    color white
+    cursor pointer
+
+  > form
+    display flex
+    flex-wrap wrap
+    width 500px
+    max-width 100%
+
+    > h3
+      margin 10px auto
+      color white
+      font-size 2em
+      font-weight 500
+      text-transform none
+
+    > input,
+    > textarea
+      width 450px
+      max-width 80%
+      margin 5px auto
+      padding 8px 12px
+      border none
+      font-family inherit
+      font-size 1.2em
+
+    > div
+      display flex
+      justify-content flex-end
+      width 450px
+      max-width 80%
+      margin 5px auto
+
+      > input[name="submit"]
+        text-align center
+        width 150px
+        margin-right -12px
+        padding 8px 12px
+        border none
+        background-color white
+        color #555
+        font-size 1.1em
+        font-weight 600
+        cursor pointer

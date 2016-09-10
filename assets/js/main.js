@@ -1,7 +1,6 @@
 // Imports
 var hero = './hero.js';
 
-
 // Global dimensions
 var height = $(window).height() + 5;
 var unitHeight = parseInt(height) + 'px';
@@ -21,6 +20,19 @@ $(document).ready(function() {
 				// Hero Methods
 				hero();
 				drawer();
+
+				$(window).scroll(function() {
+								var fadeDistance = $(window).height() / 2;
+								var fadePercent = $(window).scrollTop() / fadeDistance;
+
+								if ($(fadePercent < 2)) {
+												$('.fadeout').animate({
+																paddingTop: 400*fadePercent,
+																opacity: 1.75-fadePercent,
+												}, 1);
+								}
+				})
+
 				scaleVideoContainer();
 				initBannerVideoSize('.video-container .poster img');
 				initBannerVideoSize('.video-container .filter');
@@ -76,8 +88,50 @@ $(document).ready(function() {
 				});
 
 
+				// ---- PORTFOLIO ---- //
+				var portfolioTop = $('#services').offset().top + $('#services').height();
+				$('#portfolio').css('top', portfolioTop + 'px');
+
+				$(window).scroll(function() {
+								var scrollBot = $(window).scrollTop() + $(window).height();
+								var scrollPos = ($(window).scrollTop() + $('#services').height()) / portfolioTop;
+
+								if (scrollPos > 1) {
+												$('.company').each(function(i) {
+																setTimeout(function() {
+																				$('.fadeInLeft').eq(i).animate({
+																								marginLeft: '0px',
+																								marginRight: '0px'
+																				}, 500);
+																				$('.company').eq(i).animate({
+																								opacity: 1
+																				}, 750);
+																}, 125*i);
+												});
+								}
+				});
+
 				// Filter Methods
 				/*toggleFilters();
 							toggleCheckBoxes();
 							filterItems();*/
+
+
+				// ---- CONTACT FORM ---- //
+				$('#contact-trigger').click(function() {
+								$('#contact').toggleClass('popUpLeft');
+								$('#drawer-controller').prop('checked', false);
+								if ($(window).width() < 768) {
+												$('main').find('.logo').removeClass('hidden');
+												$('main').find('.subtitle').removeClass('hidden');
+								}
+				});
+				$('#contact').find('.close').click(function() {
+								$('#contact').removeClass('popUpLeft');
+				});
+				$(document).keydown(function(e) {
+								if (e.keyCode == 27) {
+												$('#contact').removeClass('popUpLeft');
+								}
+				});
 });

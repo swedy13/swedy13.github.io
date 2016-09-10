@@ -23,10 +23,13 @@ $twelfth = percentage(1 / 12)
 // ***************** //
 // ---- OPTIONS ---- //
 // ***************** //
-// ---- Positioning ---- //
 // Containers are for positioning absolute and fixed items
 .container
   position relative
+
+// ---- Positioning ---- //
+.back
+  z-index -1
 
 // Horizontal
 .center
@@ -47,24 +50,24 @@ $twelfth = percentage(1 / 12)
 
 // ---- Spacing ---- //
 .tight
-  &.row,
+  &.row
     margin-top 0
     margin-bottom 0
-  &.col > *
+  &.col
     padding 0
 
 .comfortable
-  &.row,
+  &.row
     margin-top 1.5*$gutter
     margin-bottom 1.5*$gutter
-  &.col > *
+  &.col
     padding 1.5*$gutter
 
 .spacious
-  &.row,
+  &.row
     margin-top 2*$gutter
     margin-bottom 2*$gutter
-  &.col > *
+  &.col
     padding 2*$gutter
 
 
@@ -83,7 +86,7 @@ main
 // ---- ROWS ---- //
 // ************** //
 .{$row}
-  margin $gutter -1*$gutter
+  margin $gutter 0
   list-style none
   overflow hidden
 
@@ -94,37 +97,13 @@ main
   margin-top 0px
   margin-bottom 0px
 
+.row.half
+  height 50vh
 
-// ---- Spacing ---- //
-// .{$row}.no-gutter
-//   width 100%
-//   margin-left 0
-//   .{$col}
-//     padding-left 0
-//   .whole
-//     width $whole
-//     margin-left 0
+.row.padded
+  padding-top $gutter
+  padding-bottom $gutter
 
-.tight
-  &.row
-    margin-top 0px
-    margin-bottom 0px
-  &.col
-    padding 0px
-
-.comfortable
-  &.row
-    margin-top 1.5*$gutter
-    margin-bottom 1.5*$gutter
-  &.col
-    padding 1.5*$gutter
-
-.spacious
-  &.row
-    margin-top 2*$gutter
-    margin-bottom 2*$gutter
-  &.col
-    padding 2*$gutter
 
 
 
@@ -144,6 +123,12 @@ main
 // Full width
 .whole
   width $whole
+
+@media screen and (max-width: 770px)
+  .half, .third, .fourth, .fifth, .twelfth
+    & > div
+      &:not(.fixed)
+        width $whole !important
 
 // Half width
 .half

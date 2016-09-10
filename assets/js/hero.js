@@ -27,6 +27,7 @@ function hero() {
 function getVideo(src) {
 				var video = document.createElement("video");
 				video.setAttribute('id', 'hero-video');
+				video.setAttribute('class', 'background');
     document.getElementById('hero-container').appendChild(video);
 
 				var element = ['mp4', 'ogg', 'webm', 'jpg'];
