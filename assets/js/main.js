@@ -118,17 +118,31 @@ $(document).ready(function() {
 
 
 				// ---- CONTACT FORM ---- //
-				$('#contact-trigger').click(function() {
-								$('#contact').toggleClass('popUpLeft');
+				// Open function
+				$('#contact-trigger').click(function(e) {
+								$('#contact').addClass('popUpLeft');
 								$('#drawer-controller').prop('checked', false);
 								if ($(window).width() < 768) {
 												$('main').find('.logo').removeClass('hidden');
 												$('main').find('.subtitle').removeClass('hidden');
 								}
+
+								// Animate function
+								if ($('#contact').hasClass('popUpLeft')) {
+												$('#contact').mousemove(function(e) {
+																var vertical = 125 + (e.pageY - $(window).scrollTop())/10;
+																$('#contact').css('background-size', 'auto ' + vertical + 'vh');
+												});
+								}
 				});
+
+				// Close functions
 				$('#contact').find('.close').click(function() {
 								$('#contact').removeClass('popUpLeft');
 				});
+				$('#contact').find('button').click(function() {
+								$('#contact').removeClass('popUpLeft');
+				})
 				$(document).keydown(function(e) {
 								if (e.keyCode == 27) {
 												$('#contact').removeClass('popUpLeft');

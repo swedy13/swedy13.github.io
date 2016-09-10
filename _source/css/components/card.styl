@@ -31,6 +31,7 @@
     margin-left auto
     margin-right auto
     filter drop-shadow(0 1px 3px #333)
+    opacity 1
 
 // ---- Back Side ---- //
 .card > .back
@@ -44,39 +45,38 @@
   .title,
   .content
     width 100%
-    color white
     opacity 0
 
   .title
     margin-bottom 8px
     font-size 1.5em
     font-weight bold
+    color white
 
   .content
     quote
       font-size 1.05em
       font-weight 300
       font-style italic
+      color white
 
     p
       margin-top 24px
       margin-bottom 24px
       font-size 1.1em
+      color white
 
     button
       margin 2px
       padding 10px 20px
-      background-color white
-      outline none
-      border 1px solid white
+      background-color transparent
+      border 2px solid white
       border-radius 2px
-      border-style none
       font-size 1em
-      color #333
+      color white
 
       &:hover
-        background-color #eee
-        color #111
+        background-color rgba(0,0,0,.1)
 
 
 // ---- Effects ---- //
@@ -90,7 +90,10 @@
   opacity 0
 
 .card:hover
-  .back
+  > .front > .logo
+      opacity 0
+
+  > .back
     top 0%
     bottom 0%
     left 0%
