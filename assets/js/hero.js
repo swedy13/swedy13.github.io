@@ -6,7 +6,7 @@ function hero() {
 				// Creates and inserts and randomized video element into the hero section
 				setTimeout(function() {
 							 getVideo(src);
-				}, 4000);
+				}, 3000);
 
     // For Microsoft Explorer to work...
 				if (!String.prototype.includes) {
