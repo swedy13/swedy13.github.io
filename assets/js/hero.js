@@ -2,14 +2,13 @@ function hero() {
 				var videos = ['Hello-World', 'One-Swan', 'Up', 'birdcatcher'];
 				var randomize = Math.floor(Math.random() * 4);
 				var src = 'assets/video/' + videos[randomize] + '/' + videos[randomize];
-				/*var src = 'assets/video/birdcatcher/birdcatcher';*/
 
 				// Creates and inserts and randomized video element into the hero section
-				/*setTimeout(function() {
-							getVideo(src);
-							}, 3000);*/
-				getVideo(src);
+				setTimeout(function() {
+							 getVideo(src);
+				}, 4000);
 
+    // For Microsoft Explorer to work...
 				if (!String.prototype.includes) {
 								String.prototype.includes = function() {
 												'use strict';

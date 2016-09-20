@@ -17,13 +17,21 @@ function drawer() {
 				function close() {
 								controller.prop('checked', false);
 								if ($(window).width() < 768) {
-												content.find('.logo').removeClass('hidden');
-												content.find('.subtitle').removeClass('hidden');
+            setTimeout(function() {
+												    content.find('.logo').removeClass('hidden');
+												    content.find('.subtitle').removeClass('hidden');
+            }, 100);
 								}
 				}
 
 
 				// ---- INTERACTIONS ---- //
+    $('label[for="drawer-controller"]').click(function() {
+								if ($(window).width() < 768) {
+												content.find('.logo').addClass('hidden');
+												content.find('.subtitle').addClass('hidden');
+								}
+    });
 				content.click(function() {
 								if (container.css('width') !== '0px') {
 												close();
