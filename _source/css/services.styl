@@ -1,0 +1,56 @@
+#services
+  width 100%
+  padding 50px 0
+  background white
+
+
+// Description
+#services .text
+    width 90%
+    margin 0 auto
+
+    h1,
+    p
+      color #333
+
+    h1
+      width 100%
+      margin-bottom 15px
+      text-align center
+      font-size 2em
+      font-weight 400
+
+    p
+      text-align justify
+      width 100%
+      margin-bottom 15px
+      font-size 1.2em
+      line-height 1.5
+
+
+// Icon Group
+#services .group
+    display flex
+    justify-content center
+    width 100%
+    margin 25px 0
+
+    .item
+      text-align center
+      margin-top 20px
+      padding 15px
+
+      h3
+        margin 15px 0 5px
+
+@media (max-width: 735px)
+  #services .group
+    flex-wrap wrap
+    .item
+      width 100%
+
+@media (min-width: 736px)
+  #services .group
+    flex-wrap nowrap
+    .item
+      width 25%

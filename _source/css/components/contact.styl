@@ -1,0 +1,116 @@
+#contact
+  z-index 2
+  display flex
+  align-items center
+  justify-content center
+  position fixed
+  top 0
+  bottom 0
+  left 0
+  right 0
+  height 0px
+  width 100%
+  background-size cover
+  background-position center
+  background-repeat no-repeat
+  opacity 0
+  filter grayscale(.5)
+  transition height .25s linear, opacity .25s linear
+
+  &::after
+    content ''
+    z-index 3
+    position fixed
+    top 0
+    bottom 0
+    left 0
+    right 0
+    height 0
+    width 100%
+    background-color gray
+    opacity .33
+
+  &.popUpLeft
+    height 100vh
+    opacity 1
+
+    &::after
+      height 100vh
+
+  > .close
+    z-index 4
+    display none
+    position fixed
+    text-align center
+    top 15px
+    right 15px
+    height 28px
+    width 28px
+    border 3px solid white
+    border-radius 100%
+    box-shadow 0 1px 3px black
+    font-size 1.5em
+    color white
+    cursor pointer
+
+  > form
+    z-index 4
+    display none
+    flex-wrap wrap
+    position relative
+    width 500px
+    max-width 100%
+
+    > h3
+      margin 10px auto
+      color white
+      font-size 2em
+      font-weight 500
+      text-shadow 0 1px 3px black
+      text-transform none
+
+    > input,
+    > textarea
+      width 450px
+      max-width 80%
+      margin 5px auto
+      padding 8px 12px
+      border none
+      box-shadow 0 1px 3px black
+      font-family inherit
+      font-size 1.2em
+
+    > div
+      display flex
+      justify-content space-between
+      width 450px
+      max-width 80%
+      margin 5px auto
+
+      > .contact-buttons
+        text-align center
+        width 52%
+        margin auto -12px
+        padding 8px 12px
+        border 2px solid
+        box-shadow 0 1px 3px black
+        font-size 1.1em
+        font-weight 600
+        color white
+        text-shadow 0 1px 3px black
+        cursor pointer
+
+      > input.contact-buttons
+        border-color #cc66cc
+        background-color #cc66cc
+
+        &:hover
+          border-color violet
+          background-color violet
+
+      > button.contact-buttons
+        border-color #ddd
+        background-color transparent
+
+        &:hover
+          background-color rgba(255,255,255,.25)

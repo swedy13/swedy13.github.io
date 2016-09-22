@@ -1,26 +1,22 @@
-input(id="drawer-controller" type="checkbox")
-sidebar(id="drawer-container" class="medium right")
-  nav(id="drawer" class="light")
-    .top.shelf
-      .ghost.banner
-        .mini.light.disabled.logo ~ MS ~
-      .divider
-      .fluid.comfortable.center.vertical.menu
-        .large.thick.gray.caps.item.expand.darklight about
-        .large.thick.gray.caps.item.expand.darklight services
-        .large.thick.gray.caps.item.expand.darklight portfolio
-        #contact-trigger.large.thick.gray.caps.item.expand.darklight contact
-    .bottom.shelf.tight
-      .fluid.center.vertical.menu.rotate
-        .border.dashed.ghost.banner.item.quora.shadow
-          a(href="https://www.quora.com/profile/Mark-Swedberg" target="_blank")
-            img(class="darken hover" src="assets/images/social/quora.png")
-        .border.dashed.ghost.banner.item.github.shadow
-          a(href="https://github.com/swedy13" target="_blank")
-            img(class="darken hover" src="assets/images/social/github.png")
-        .border.dashed.ghost.banner.item.linkedin.shadow
-          a(href="https://www.linkedin.com/in/markswedberg" target="_blank")
-            img(class="darken hover" src="assets/images/social/linkedin.png")
-        .border.dashed.ghost.banner.item.upwork.shadow
-          a(href="https://www.upwork.com/fl/markswedberg" target="_blank")
-            img(class="darken hover" src="assets/images/social/upwork.png")
+nav(id="drawer")
+  .top
+    .logo ~ MS ~
+    .divider
+    .menu
+      .item services
+      .item portfolio
+      .item#contact-trigger contact
+
+  .bottom
+    .item.linkedin
+      a(href="https://www.linkedin.com/in/markswedberg" target="_blank")
+        img(class="darken hover" src="assets/images/social/linkedin.png")
+    .item.upwork
+      a(href="https://www.upwork.com/fl/markswedberg" target="_blank")
+        img(class="darken hover" src="assets/images/social/upwork.png")
+    .item.github
+      a(href="https://github.com/swedy13" target="_blank")
+        img(class="darken hover" src="assets/images/social/github.png")
+    .item.quora
+      a(href="https://www.quora.com/profile/Mark-Swedberg" target="_blank")
+        img(class="darken hover" src="assets/images/social/quora.png")
