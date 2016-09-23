@@ -45,7 +45,7 @@ function openNav() {
     // Hides hero content on mobile devices
     if ($(window).width() < 768) {
         $('#hero').find('h1, h3').hide();
-        $('#hero').find('.menu-icon .text').text('x')
+        $('#hero').find('.menu-icon .text').text('x');
         $('#hero').find('.menu-icon .icon').hide();
     }
 }

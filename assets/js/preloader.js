@@ -52,15 +52,16 @@ function preloader() {
             textWave(0);
             textWave(1500);
             cleanup(3750);
-
-            setTimeout(function() {
-                // Re-enables scrolling
-                $('body').css('overflow-y', 'auto');
-
-                // Starts the video on page load
-                playVideo();
-            }, 3750);
         }, 300);
+
+        // Plays the video
+        setTimeout(function() {
+            // Re-enables scrolling
+            $('body').css('overflow-y', 'auto');
+
+            // Starts the video on page load
+            playVideo();
+        }, 3750);
     });
 }
 
