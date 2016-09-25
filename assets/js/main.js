@@ -39,14 +39,19 @@ $(document).ready(function() {
     // ---- VIEW HEIGHTS ---- //
     // Sets a static view height that updates on screen resize
     // This prevents screen janking in mobile browsers
+    var setWidth;
+    var setHeight;
     $(document).ready(function() {
-        var setHeight = $(window).height();
+        setHeight = $(window).height();
+        setWidth = $(window).width();
         $('#hero').css('height', setHeight);
     });
-    $(window).resize(function() {
-        var setHeight = $(window).height();
+    // I'm not using window.resize because Android resizes window on scroll
+    if ($(window).width() != setWidth) {
+        setHeight = $(window).height();
+        setWidth = $(window).width();
         $('#hero').css('height', setHeight);
-    });
+    }
 
 
     // ---- PORTFOLIO ---- //
