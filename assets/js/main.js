@@ -39,21 +39,11 @@ $(document).ready(function() {
     // ---- VIEW HEIGHTS ---- //
     // Sets a static view height that updates on screen resize
     // This prevents screen janking in mobile browsers
-    function setHeight() {
-        $('#hero').css('height', document.documentElement.clientHeight);
-        $('#drawer').css('height', document.documentElement.clientHeight);
-        if ($(window).width() < 736) {
-            $('#contact.open').css('height', document.documentElement.clientHeight);
-        }
-    }
-
-    // Fires on document load
     $(document).ready(function() {
-        setHeight();
+        $('#hero').css('height', document.documentElement.clientHeight);
     });
-    // Fires on resize
     $(window).resize(function() {
-        setHeight();
+        $('#hero').css('height', document.documentElement.clientHeight);
     });
 
 
@@ -84,6 +74,7 @@ $(document).ready(function() {
         $('#contact form').show();
         $('#contact').addClass('open fixed');
         $('#contact .title h3').addClass('flipped');
+        $('body').css('overflow-y', 'hidden');    // Temporarily disables scrolling
     }
     // Close function
     function closeContact() {
@@ -92,6 +83,7 @@ $(document).ready(function() {
         $('#contact form').hide();
         setTimeout(function() {
             $('#contact').removeClass('fixed');
+            $('body').css('overflow-y', 'auto');  // Re-enables scrolling
         }, 125);
     }
 
@@ -149,6 +141,9 @@ function openNav() {
         $('#hero').find('.menu-icon .text').text('x');
         $('#hero').find('.menu-icon .icon').hide();
     }
+
+    // Temporarily disables scrolling
+    $('body').css('overflow-y', 'hidden');
 }
 
 function closeNav() {
@@ -161,6 +156,9 @@ function closeNav() {
         $('#hero').find('.menu-icon .text').text('menu');
         $('#hero').find('.menu-icon .icon').show();
     }
+
+    // Re-enables scrolling
+    $('body').css('overflow-y', 'auto');
 }
 
 
