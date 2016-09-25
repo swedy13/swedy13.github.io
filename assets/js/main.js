@@ -36,14 +36,24 @@ $(document).ready(function() {
         }
     });
 
-    // ---- HERO ---- //
+    // ---- VIEW HEIGHTS ---- //
     // Sets a static view height that updates on screen resize
     // This prevents screen janking in mobile browsers
+    function setHeight() {
+        $('#hero').css('height', document.documentElement.clientHeight);
+        $('#drawer').css('height', document.documentElement.clientHeight);
+        if ($(window).width() < 736) {
+            $('#contact.open').css('height', document.documentElement.clientHeight);
+        }
+    }
+
+    // Fires on document load
     $(document).ready(function() {
-        $('#hero').css('height', document.documentElement.clientHeight);
+        setHeight();
     });
+    // Fires on resize
     $(window).resize(function() {
-        $('#hero').css('height', document.documentElement.clientHeight);
+        setHeight();
     });
 
 
@@ -80,6 +90,9 @@ $(document).ready(function() {
         $('#contact').removeClass('open');
         $('#contact .title h3').removeClass('flipped');
         $('#contact form').hide();
+        setTimeout(function() {
+            $('#contact').removeClass('fixed');
+        }, 125);
     }
 
     // Opens the menu when the nav contact button is clicked
