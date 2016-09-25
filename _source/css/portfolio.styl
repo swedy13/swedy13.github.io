@@ -1,0 +1,163 @@
+#portfolio
+  display flex
+  flex-wrap wrap
+  margin 0 auto
+  cursor default
+
+
+// ---- Sizing ---- //
+#portfolio .item
+  border-sizing border-box
+  height 320px
+
+// Small
+@media (max-width: 567px)
+  #portfolio .item
+    width 100%
+
+// Medium
+@media (min-width: 568px) and (max-width: 767px)
+  #portfolio .item
+    width 50%
+
+// Tablet Portrait
+@media (min-width: 768px) and (max-width: 1023px)
+  #portfolio .item
+    width 50%
+
+// Large
+@media (min-width: 1024px)
+  #portfolio .item
+    width calc(100% / 3)
+
+
+// ---- Cards ---- //
+#portfolio .company
+  height 100%
+  width 100%
+  position relative
+  background-size cover
+  background-position center
+  overflow hidden
+
+  // Effects
+  &:hover
+    .front
+      opacity 0
+      transition .1s
+
+    .back
+      display block
+
+  // Front
+  .front
+    display flex
+    align-items center
+    justify-content center
+    height 100%
+    width 100%
+
+    .mask
+      position absolute
+      top 0
+      bottom 0
+      left 0
+      right 0
+      background-color rgba(0,0,0,.5)
+
+    .logo
+      z-index 1
+      position relative
+      height auto
+      max-width 75%
+      margin auto
+
+  // Back
+  .back *
+    opacity 0
+
+  .back
+    display none
+    position absolute
+    top 50%
+    left 50%
+    height 0%
+    width 0%
+    padding 25px
+    margin auto
+    transform translateX(-50%) translateY(-50%)
+
+    // Text
+    .title, .content, button
+      color white
+
+    .title
+      text-align center
+      width 100%
+      margin-bottom 7px
+      font-size 1.5em
+
+    .content
+      display flex
+      flex-wrap wrap
+      align-content flex-start
+      justify-content center
+      height calc(100% - 35px)
+      line-height 1.5
+
+    .content > *
+      font-size 1.1em
+
+    .content quote
+      font-style italic
+      font-weight 300
+
+    .content p
+      text-align left
+      width 100%
+      margin 25px 0
+
+    // Buttons
+    .buttons
+      position absolute
+      display flex
+      bottom 25px
+      left 50%
+      transform translateX(-50%)
+
+      button
+        margin 0 2px
+        padding 8px 24px
+        border 2px solid white
+        transition .15s
+
+        &:hover
+          background white
+          color darkslategray
+          text-shadow 0 1px 0 darkslategray
+
+
+// Colors
+.smartprofyl > .back
+  // background-color #005e82
+  background-color rgba(0, 94, 130, .9)
+
+.sage > .back
+  // background-color #07b977
+  background-color rgba(7, 185, 119, .9)
+
+.atsc > .back
+  // background-color #e62c2c
+  background-color rgba(230, 44, 44, .9)
+
+.prodigy > .back
+  // background-color darkslategray / #2F4F4F
+  background-color rgba(47, 79, 79, .9)
+
+.movietv > .back
+  // background-color darkgoldenrod
+  background-color rgba(184, 134, 11, .9)
+
+.pairable > .back
+  // background-color #4793c5
+  background-color rgba(71, 147, 197, .9)

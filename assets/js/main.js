@@ -34,8 +34,77 @@ $(document).ready(function() {
         if (e.keyCode == 37 || e.keyCode == 27) {
             closeNav();
         }
-    })
+    });
+
+    // ---- PORTFOLIO ---- //
+    $('#portfolio .item').hover(
+        function() {
+            $(this).find('.back').animate({
+                height: '100%',
+                width: '100%',
+            }, 125);
+            $(this).find('.back *').delay(75).animate({
+                opacity: 1
+            }, 50);
+        },
+        function() {
+            $(this).find('.back').stop().animate({
+                height: '0%',
+                width: '0%',
+            }, 125);
+            $(this).find('.back *').css('opacity', 0);
+        }
+    );
+
+
+    // ---- CONTACT ---- //
+    // Open function
+    function openContact() {
+        $('#contact').addClass('open fixed');
+        $('#contact .title h3').addClass('flipped');
+    }
+    // Close function
+    function closeContact() {
+        $('#contact').removeClass('open');
+        $('#contact .title h3').removeClass('flipped');
+    }
+
+    // Opens the menu when the nav contact button is clicked
+    $('#contact-trigger').click(function() {
+        closeNav();
+        openContact();
+    });
+
+    // Toggles contact menu with the title is clicked
+    $('#contact .title').click(function() {
+        if ($('#contact').hasClass('open')) {
+            closeContact();
+        }
+        else {
+            openContact();
+        }
+    });
+    // Closes contact menu when the exit button is clicked
+    $('#contact .exit').click(function() {
+        closeContact();
+    });
+
+    // Closes the contact menu when the user clicks outside the menu
+    $('#contact').click(function(e) {
+        e.stopPropagation();
+    });
+    $('body').click(function() {
+        closeContact();
+    });
+
+    // Fixes contact button when the user reaches the bottom of the page
+    $(window).scroll(function() {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 3) {
+            $('#contact').addClass('fixed');
+        }
+    });
 });
+
 
 // ---- NAV ---- //
 function openNav() {
@@ -45,7 +114,7 @@ function openNav() {
     // Hides hero content on mobile devices
     if ($(window).width() < 768) {
         $('#hero').find('h1, h3').hide();
-        $('#hero').find('.menu-icon .text').text('x')
+        $('#hero').find('.menu-icon .text').text('x');
         $('#hero').find('.menu-icon .icon').hide();
     }
 }
