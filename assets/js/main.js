@@ -36,6 +36,17 @@ $(document).ready(function() {
         }
     });
 
+    // ---- HERO ---- //
+    // Sets a static view height that updates on screen resize
+    // This prevents screen janking in mobile browsers
+    $(document).ready(function() {
+        $('#hero').css('height', document.documentElement.clientHeight);
+    });
+    $(window).resize(function() {
+        $('#hero').css('height', document.documentElement.clientHeight);
+    });
+
+
     // ---- PORTFOLIO ---- //
     $('#portfolio .item').hover(
         function() {
@@ -60,6 +71,7 @@ $(document).ready(function() {
     // ---- CONTACT ---- //
     // Open function
     function openContact() {
+        $('#contact form').show();
         $('#contact').addClass('open fixed');
         $('#contact .title h3').addClass('flipped');
     }
@@ -67,6 +79,7 @@ $(document).ready(function() {
     function closeContact() {
         $('#contact').removeClass('open');
         $('#contact .title h3').removeClass('flipped');
+        $('#contact form').hide();
     }
 
     // Opens the menu when the nav contact button is clicked
@@ -88,6 +101,12 @@ $(document).ready(function() {
     $('#contact .exit').click(function() {
         closeContact();
     });
+    // Keyboard Toggle
+    $('body').keydown(function(e) {
+        if (e.keyCode == 27) {
+            closeContact();
+        }
+    });
 
     // Closes the contact menu when the user clicks outside the menu
     $('#contact').click(function(e) {
@@ -98,11 +117,11 @@ $(document).ready(function() {
     });
 
     // Fixes contact button when the user reaches the bottom of the page
-    $(window).scroll(function() {
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 3) {
-            $('#contact').addClass('fixed');
-        }
-    });
+    /*$(window).scroll(function() {
+     *    if ($(window).scrollTop() + $(window).height() > $(document).height() - 3) {
+     *        $('#contact').addClass('fixed');
+     *    }
+     *});*/
 });
 
 

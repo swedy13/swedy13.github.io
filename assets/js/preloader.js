@@ -69,8 +69,11 @@ function preloader() {
 function loadVideo(src) {
     // Creates a video element as a child of the hero element
 				var video = document.createElement("video");
-				video.setAttribute('id', 'hero-video');
     document.getElementById('hero').appendChild(video);
+
+    // Modifies video attributes
+    video.setAttribute('id', 'hero-video');
+				video.setAttribute('poster', 'assets/video/' + src + '/' + src + '.jpg');
 
 				var element = ['mp4', 'ogg', 'webm', 'jpg'];
 				for (var i = 0; i < element.length; i++) {
