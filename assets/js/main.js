@@ -40,10 +40,12 @@ $(document).ready(function() {
     // Sets a static view height that updates on screen resize
     // This prevents screen janking in mobile browsers
     $(document).ready(function() {
-        $('#hero').css('height', document.documentElement.clientHeight);
+        var setHeight = $(window).height();
+        $('#hero').css('height', setHeight);
     });
     $(window).resize(function() {
-        $('#hero').css('height', document.documentElement.clientHeight);
+        var setHeight = $(window).height();
+        $('#hero').css('height', setHeight);
     });
 
 
