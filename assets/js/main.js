@@ -46,12 +46,14 @@ $(document).ready(function() {
         setWidth = $(window).width();
         $('#hero').css('height', setHeight);
     });
-    // I'm not using window.resize because Android resizes window on scroll
-    if ($(window).width() != setWidth) {
-        setHeight = $(window).height();
-        setWidth = $(window).width();
-        $('#hero').css('height', setHeight);
-    }
+    $(window).resize(function() {
+        // Prevents Android from triggering the resize on scroll
+        if ($(window).width() != setWidth) {
+            setHeight = $(window).height();
+            setWidth = $(window).width();
+            $('#hero').css('height', setHeight);
+        }
+    });
 
 
     // ---- PORTFOLIO ---- //
