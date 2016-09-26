@@ -56,27 +56,6 @@ $(document).ready(function() {
     });
 
 
-    // ---- PORTFOLIO ---- //
-    $('#portfolio .item').hover(
-        function() {
-            $(this).find('.back').animate({
-                height: '100%',
-                width: '100%',
-            }, 125);
-            $(this).find('.back *').delay(75).animate({
-                opacity: 1
-            }, 50);
-        },
-        function() {
-            $(this).find('.back').stop().animate({
-                height: '0%',
-                width: '0%',
-            }, 125);
-            $(this).find('.back *').css('opacity', 0);
-        }
-    );
-
-
     // ---- CONTACT ---- //
     // Open function
     function openContact() {

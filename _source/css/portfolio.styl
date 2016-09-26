@@ -44,10 +44,23 @@
   &:hover
     .front
       opacity 0
-      transition .1s
 
     .back
-      display block
+      height 101%
+      width 101%
+      padding 25px
+
+    .back *
+      opacity 1
+      transition-delay 1s
+      transition .5s
+
+  .front,
+  .back
+    transition .15s
+
+  .back *
+    opacity 0
 
   // Front
   .front
@@ -73,18 +86,13 @@
       margin auto
 
   // Back
-  .back *
-    opacity 0
-
   .back
-    display none
     position absolute
     top 50%
     left 50%
     height 0%
     width 0%
-    padding 25px
-    margin auto
+    padding 0px
     transform translateX(-50%) translateY(-50%)
 
     // Text
