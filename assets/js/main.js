@@ -36,22 +36,47 @@ $(document).ready(function() {
         }
     });
 
-    // ---- VIEW HEIGHTS ---- //
+    // Smooth Scrolling
+    $('nav .top .menu .item').click(function() {
+        var item = $(this).text();
+        if (item != 'contact') {
+            $("html,body").animate({
+                scrollTop: $('#' + item).offset().top
+            }, 300);
+        }
+    });
+
+
+    // ---- HERO ---- //
+    // View Height
     // Sets a static view height that updates on screen resize
     // This prevents screen janking in mobile browsers
-    var setWidth;
-    var setHeight;
+    var currentWidth;
+    var currentHeight;
     $(document).ready(function() {
-        setHeight = $(window).height();
-        setWidth = $(window).width();
-        $('#hero').css('height', setHeight);
+        currentHeight = $(window).height();
+        currentWidth = $(window).width();
+        $('#hero').css('height', currentHeight);
     });
     $(window).resize(function() {
         // Prevents Android from triggering the resize on scroll
-        if ($(window).width() != setWidth) {
-            setHeight = $(window).height();
-            setWidth = $(window).width();
-            $('#hero').css('height', setHeight);
+        if ($(window).width() != currentWidth) {
+            currentHeight = $(window).height();
+            currentWidth = $(window).width();
+            $('#hero').css('height', currentHeight);
+        }
+    });
+
+    // Pause Video
+    // This pauses the video when it is outside the user's view
+    // to help improve overall site performance
+    $(document).scroll(function() {
+        var windowPosition = $(window).scrollTop();
+        if (windowPosition > currentHeight - 50) {
+            $('video').get(0).pause();
+        }
+        else {
+            $('video').get(0).play();
         }
     });
 
@@ -129,9 +154,6 @@ function openNav() {
         $('#hero').find('.menu-icon .text').text('x');
         $('#hero').find('.menu-icon .icon').hide();
     }
-
-    // Temporarily disables scrolling
-    $('body').css('overflow-y', 'hidden');
 }
 
 function closeNav() {
@@ -144,9 +166,6 @@ function closeNav() {
         $('#hero').find('.menu-icon .text').text('menu');
         $('#hero').find('.menu-icon .icon').show();
     }
-
-    // Re-enables scrolling
-    $('body').css('overflow-y', 'auto');
 }
 
 

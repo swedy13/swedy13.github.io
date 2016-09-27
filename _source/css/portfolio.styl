@@ -31,27 +31,21 @@
     width calc(100% / 3)
 
 
-// ---- Cards ---- //
-#portfolio .company
-  height 100%
-  width 100%
-  position relative
-  background-size cover
-  background-position center
-  overflow hidden
-
-  // Effects
+// Effects
+ #portfolio .item
   &:hover
     .front .mask
       background-color rgba(0,0,0,.75)
     .front .logo
       transform translateX(-50%) translateY(-500px)
-
     .back
       top 25px
-
     .back *
       opacity 1
+
+@media (min-width: 768px)
+  #portfolio .item:hover
+    .back *
       transition-delay .5s
       transition .5s
 
@@ -61,8 +55,15 @@
   .back
     transition .25s
 
-  .back *
-    opacity 0
+
+// ---- Cards ---- //
+#portfolio .company
+  height 100%
+  width 100%
+  position relative
+  background-size cover
+  background-position center
+  overflow hidden
 
   // Front
   .front
@@ -89,6 +90,9 @@
       transform translateX(-50%) translateY(-50%)
 
   // Back
+  .back *
+    opacity 0
+
   .back
     position absolute
     top 100%
