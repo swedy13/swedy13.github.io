@@ -42,22 +42,24 @@
 
   // Effects
   &:hover
-    .front
-      opacity 0
+    .front .mask
+      background-color rgba(0,0,0,.75)
+    .front .logo
+      transform translateX(-50%) translateY(-500px)
 
     .back
-      height 101%
-      width 101%
-      padding 25px
+      top 25px
 
     .back *
       opacity 1
-      transition-delay 1s
+      transition-delay .5s
       transition .5s
 
   .front,
+  .front .logo,
+  .front .mask,
   .back
-    transition .15s
+    transition .25s
 
   .back *
     opacity 0
@@ -67,8 +69,6 @@
     display flex
     align-items center
     justify-content center
-    height 100%
-    width 100%
 
     .mask
       position absolute
@@ -76,24 +76,29 @@
       bottom 0
       left 0
       right 0
-      background-color rgba(0,0,0,.5)
+      background-color rgba(0,0,0,.33)
 
     .logo
       z-index 1
-      position relative
+      position absolute
+      top 50%
+      left 50%
       height auto
       max-width 75%
-      margin auto
+      filter drop-shadow(0 1px 5px #333)
+      transform translateX(-50%) translateY(-50%)
 
   // Back
   .back
     position absolute
-    top 50%
+    top 100%
     left 50%
-    height 0%
-    width 0%
-    padding 0px
-    transform translateX(-50%) translateY(-50%)
+    height calc(100% - 50px)
+    width calc(100% - 50px)
+    padding 25px
+    border 1px solid rgba(255,255,255,.25)
+    box-shadow 0 1px 20px 2px #111
+    transform translateX(-50%) // translateY(-50%)
 
     // Text
     .title, .content, button
@@ -148,24 +153,24 @@
 // Colors
 .smartprofyl > .back
   // background-color #005e82
-  background-color rgba(0, 94, 130, .9)
+  background-color rgba(0, 94, 130, .6)
 
 .sage > .back
   // background-color #07b977
-  background-color rgba(7, 185, 119, .9)
+  background-color rgba(7, 185, 119, .6)
 
 .atsc > .back
   // background-color #e62c2c
-  background-color rgba(230, 44, 44, .9)
+  background-color rgba(230, 44, 44, .6)
 
 .prodigy > .back
   // background-color darkslategray / #2F4F4F
-  background-color rgba(47, 79, 79, .9)
+  background-color rgba(47, 79, 79, .6)
 
 .movietv > .back
   // background-color darkgoldenrod
-  background-color rgba(184, 134, 11, .9)
+  background-color rgba(184, 134, 11, .6)
 
 .pairable > .back
   // background-color #4793c5
-  background-color rgba(71, 147, 197, .9)
+  background-color rgba(71, 147, 197, .6)
