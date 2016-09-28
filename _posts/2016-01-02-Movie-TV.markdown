@@ -4,7 +4,7 @@ title: "Movie.TV"
 date: 2016-07-09 13:50:56 -0500
 categories: movietv company marketplaces websites entertainment end
 thumbnail: movietv.png
-logo: movietv-logo.png
+logo: movietv-logo.svg
 ---
 
 <quote>Blockbusters at Your Fingertips</quote>
