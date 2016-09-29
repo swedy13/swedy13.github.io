@@ -11,5 +11,5 @@ logo: smartprofyl-logo.png
 <p>A job marketplace and education platform for the technology age.</p>
 <div class="buttons">
  	<button>Design</button>
- 	<button>Prototype</button>
+ 	<a class="button" href="https://pr.to/M63FC4/" target="_blank">Prototype</a>
 </div>
