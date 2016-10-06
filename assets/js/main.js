@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('head').append('<link rel="stylesheet" href="assets/css/main.css" type="text/css" />');
+    load();
 
     // ---- Scroll  ---- //
     $(window).scroll(function() {
@@ -144,6 +144,30 @@ $(document).ready(function() {
 });
 
 
+// ---- Load ---- //
+function load() {
+    $('head').append('<link rel="stylesheet" href="assets/css/main.css" type="text/css" />');
+
+    setTimeout(function() {
+        $('#preloader .circle').animate({
+            opacity: 0
+        }, 500);
+    }, 100);
+
+    setTimeout(function() {
+        $('#preloader').animate({
+            top: '-100%',
+            opacity: 0
+        }, 750);
+    }, 750);
+
+    setTimeout(function() {
+        $('#preloader').remove();
+        fogHeight();
+    }, 1500);
+
+}
+
 // ---- Heights ----- //
 // Set Height
 // Sets a static view height that updates on screen resize
@@ -163,16 +187,6 @@ function setHeight() {
 }
 
 
-// ---- Fog ---- //
-function fogHeight() {
-    var height = $('#about').outerHeight();
-    $('#about .fog').css({
-        'height': 2*height,
-        'width': 2*height
-    });
-}
-
-
 // ---- Parallax ---- //
 function parallax(wScroll) {
     $('.slow').css({
@@ -184,6 +198,14 @@ function parallax(wScroll) {
     });
 }
 
+// ---- Fog ---- //
+function fogHeight() {
+    var height = $('#about').outerHeight();
+    $('#about .fog').css({
+        'height': 2*height,
+        'width': 2*height
+    });
+}
 function fog(wScroll) {
     var height = $('#about').outerHeight();
     var newScroll = wScroll - $('#about').offset().top;
@@ -191,7 +213,7 @@ function fog(wScroll) {
 
     $('#about .fog').css({
         'top': (height - (.5 * height)) - (.5 * percent * height) + 'px',
-        'left': ((.25 * height) - height) + (.75 * percent * height) + 'px'
+        'left': ((.3 * height) - height) + (.7 * percent * height) + 'px'
     });
 }
 
