@@ -65,9 +65,8 @@ gulp.task('move-css', function() {
 
 gulp.task('move-js', function() {
 				return gulp.src('assets/js/**')
-				/*.pipe(concat('main.js'))*/
 															.pipe(noCom())
-				/*.pipe(uglify())*/
+				           .pipe(uglify())
 															.pipe(gulp.dest('_site/assets/js'))
 															.pipe(browserSync.reload({stream:true}));
 });
