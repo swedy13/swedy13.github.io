@@ -1,11 +1,12 @@
-#portfolio
-  |{% for post in site.categories.company %}
-  .item
-    div(class="company {{post.categories[0]}} {{post.categories[1]}} {{post.categories[2]}} {{post.categories[3]}} {{post.categories[4]}} {{post.categories[5]}}" style="background-image: url('assets/images/posts/thumbnails/{{post.thumbnail}}')")
-      .front
-        .mask
-        img(class='logo' src='assets/images/posts/thumbnails/{{post.logo}}')
-      .back
-        .title {{post.title}}
-        .content {{post.content}}
-  |{% endfor %}
+#portfolio.full.gallery
+  section.tight
+    |{% for post in site.categories.company %}
+    .third.item
+      div(class="three quarter square metro image card company {{post.categories[0]}} {{post.categories[1]}} {{post.categories[2]}} {{post.categories[3]}} {{post.categories[4]}} {{post.categories[5]}}")
+        .front.image(style="background-image: url('assets/images/posts/thumbnails/{{post.thumbnail}}')")
+          .mask
+          .title {{post.title}}
+          .content {{post.content}}
+        .back
+          img(class='logo' src='assets/images/posts/thumbnails/{{post.logo}}')
+    |{% endfor %}

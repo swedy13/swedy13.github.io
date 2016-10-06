@@ -3,7 +3,7 @@ layout: project
 title:  "Design"
 date:   2016-07-09 13:50:56 -0500
 categories: atsc company landing-pages websites sports end
-thumbnail: atsc.png
+thumbnail: atsc-opt.png
 logo: atsc-logo.svg
 ---
 

@@ -3,7 +3,7 @@ layout: project
 title:  "Sage Human Capital"
 date:   2016-07-09 13:50:56 -0500
 categories: sage company dashboards web-apps business end
-thumbnail: sage.png
+thumbnail: sage-opt.png
 logo: sage-logo.svg
 ---
 

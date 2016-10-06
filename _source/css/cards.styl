@@ -1,0 +1,167 @@
+// ---- Cards ---- //
+.card
+  box-sizing border-box
+  position relative
+  height 100%
+  width 100%
+  overflow hidden
+
+  .front,
+  .back
+    display flex
+    align-items center
+    align-content center
+    justify-content center
+    flex-wrap wrap
+    height 100%
+    width 100%
+    padding 25px
+
+
+// ---- Text ---- //
+.card
+  .title
+    width 100%
+    margin-bottom 15px
+    text-align center
+    font-variant small-caps
+    color #333
+    h2
+      font-size 2em
+      font-weight 900
+    h3
+      font-size 1.5em
+      font-weight 700
+  .content
+    width 100%
+    margin -15px auto
+    font-size 1.1em
+    line-height 1.5
+    p
+      margin 15px auto
+
+
+// ---- Images ---- //
+.card
+  .image
+    background-size cover
+    background-position center
+  img
+    margin 15px auto
+
+
+// ---- Styles ---- //
+.card
+  .front,
+  .back
+    border 1px solid rgba(0,0,0,.05)
+
+.card
+  &.metro
+    box-shadow 0 1px 5px rgba(0,0,0,.15)
+
+
+// ---- Size ---- //
+$short = 200px
+$medium = 250px
+$tall = 300px
+
+.card
+  // Pixel Values
+  &.short
+    height $short
+  &.medium
+    height $medium
+  &.tall
+    height $tall
+  // Percent Values
+  &.full
+    height 100%
+  &.half
+    height 50%
+  &.third
+    height calc(100 / 3)
+  // Javascript  Values
+  // &.square
+
+// ---- Themes ---- //
+.card
+  &.white,
+  .white
+    background rgba(255,255,255,.95)
+    color #333
+
+  &.maroon,
+  .maroon
+    // background rgba(171,37,36,.9)
+    background rgba(196,39,37,.9)
+    color white
+
+
+// ---- Animations ---- //
+.card.slide
+  .front,
+  .back
+    position absolute
+    top 0
+    bottom 0
+    transition .25s ease-in-out
+
+.card.slide *:hover
+  cursor pointer
+.card.slide:hover
+  background rgba(255,255,255,0)
+  border rgba(0,0,0,0)
+
+// Slide Up
+.card.slide
+  &.up
+    .front
+      margin-top 0px
+    &.short:hover .front
+        margin-top -1*$short
+    &.medium:hover .front
+      margin-top -1*$medium
+    &.tall:hover .front
+      margin-top -1*$tall
+    &.short .back
+      margin-top $short
+    &.medium .back
+      margin-top $medium
+    &.tall .back
+      margin-top $tall
+    &:hover .back
+      margin-top 0px
+
+  // Slide Down
+  &.down
+    .front
+      margin-top 0%
+    &:hover .front
+      margin-top 100%
+    .back
+      margin-top -100%
+    &:hover .back
+      margin-top 0%
+
+  // Slide Left
+  &.left
+    .front
+      margin-left 0%
+    &:hover .front
+      margin-left -100%
+    .back
+      margin-left 100%
+    &:hover .back
+      margin-left 0%
+
+  // Slide Right
+  &.right
+    .front
+      margin-left 0%
+    &:hover .front
+      margin-left 100%
+    .back
+      margin-left -100%
+    &:hover .back
+      margin-left 0%

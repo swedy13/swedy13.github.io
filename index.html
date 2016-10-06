@@ -2,16 +2,14 @@
 layout: default
 ---
 
-{% include preloader.html %}
+{% include nav.html %}
 
 <main id="main">
 				{% include hero.html %}
-				{% include services.html %}
-				{% include portfolio.html %}
-				{% include contact.html %}
+    {% include about.html %}
+    {% include portfolio.html %}
+    {% include connect.html %}
 </main>
-
-{% include nav.html %}
 
 <script type="text/javascript" src="{{'assets/js/mobile/hammer.min.js' | prepend: site.baseurl}}"></script>
 <script type="text/javascript" src="{{'assets/js/mobile/hammertime.min.js' | prepend: site.baseurl}}"></script>

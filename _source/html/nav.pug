@@ -1,22 +1,21 @@
-nav(id="drawer")
-  .top
-    .logo ~ MS ~
-    .divider
-    .menu
-      .item services
-      .item portfolio
-      .item#contact-trigger contact
+.nav-trigger
+  .text menu
+  i(class="icon fa fa-fw fa-bars" aria-hidden="true")
 
-  .bottom
-    .item.linkedin
-      a(href="https://www.linkedin.com/in/markswedberg" target="_blank")
-        img(class="darken hover" src="assets/images/social/linkedin.png")
-    .item.upwork
-      a(href="https://www.upwork.com/fl/markswedberg" target="_blank")
-        img(class="darken hover" src="assets/images/social/upwork.png")
-    .item.github
-      a(href="https://github.com/swedy13" target="_blank")
-        img(class="darken hover" src="assets/images/social/github.png")
-    .item.quora
-      a(href="https://www.quora.com/profile/Mark-Swedberg" target="_blank")
-        img(class="darken hover" src="assets/images/social/quora.png")
+.nav-dimmer
+
+.nav
+  .controller
+    .open
+      .text close
+      i(class="icon fa fa-fw fa-times" aria-hidden="true")
+  .menu
+    .item
+      .text about
+      i(class="icon fa fa-fw fa-user" aria-hidden="true")
+    .item
+      .text portfolio
+      i(class="icon fa fa-fw fa-picture-o" aria-hidden="true")
+    .item
+      .text connect
+      i(class="icon fa fa-fw fa-comment" aria-hidden="true")

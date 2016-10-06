@@ -1,0 +1,107 @@
+// ---- Gallery ---- //
+.gallery
+  display flex
+  flex-wrap wrap
+  justify-content center
+
+  section
+    display flex
+    flex-wrap wrap
+    width 100%
+
+    .item
+      display flex
+      justify-content center
+      flex-wrap wrap
+      flex-grow 1
+
+
+// ---- Size ---- //
+.gallery
+  &.full
+    width 100%
+  &.large
+    width 95%
+    max-width 1200px
+
+$large = 300px
+$medium = 250px
+$small = 200px
+.gallery .item
+  // Pixel Values
+  &.small
+    width $small
+  &.medium
+    width $medium
+  &.large
+    width $large
+
+// Percent Values
+// Mobile
+@media (max-width: 666px)
+  .gallery section
+    .whole,
+    .half,
+    .third
+      width 100%
+// Phablet
+@media (min-width: 667px) and (max-width: 899px)
+  .gallery section
+    .whole
+      width 100%
+    .half,
+    .third
+      width calc(50% - 5px)
+// Tablet
+@media (min-width: 900px)
+  .gallery section
+    .full
+      width 100%
+    .half
+      width calc(50% - 5px)
+    .third
+      width calc(100% / 3 - 10px)
+
+
+// ---- Alignment ---- //
+// Mobile
+@media (max-width: 666px)
+  .gallery section
+    .item
+      margin 5px 0px
+    &.tight .item
+      margin 0px
+
+// Mobile
+@media (min-width: 667px) and (max-width: 899px)
+  .gallery section
+    .whole
+      margin 5px 0px
+    .half:nth-of-type(even),
+    .third:nth-of-type(even)
+      margin 5px 0 5px 5px
+    .half:nth-of-type(odd),
+    .third:nth-of-type(odd)
+      margin 5px 5px 5px 0
+    .item:last-child:nth-child(odd):not(:first-child)
+      margin 5px 0
+    &.tight .item
+      margin 0px
+
+// Tablet
+@media (min-width: 900px)
+  .gallery section
+    .whole
+      margin 5px 0
+    .half:nth-of-type(even)
+      margin 5px 5px 5px 0
+    .half:nth-of-type(odd)
+      margin 5px 0 5px 5px
+    .third:nth-of-type(3n + 1)
+      margin 5px 5px 5px 0
+    .third:nth-of-type(3n + 2)
+      margin 5px
+    .third:nth-of-type(3n + 3)
+      margin 5px 0 5px 5px
+    &.tight .item
+      margin 0px

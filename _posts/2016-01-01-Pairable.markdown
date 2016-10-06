@@ -3,8 +3,8 @@ layout: project
 title:  "Pairable"
 date:   2016-07-09 13:50:56 -0500
 categories: pairable company mobile-apps entertainment surveys end
-thumbnail: pairable.png
-logo: pairable-logo.png
+thumbnail: pairable-opt.png
+logo: pairable-logo.svg
 ---
 
 <quote>Track What Matters Most</quote>

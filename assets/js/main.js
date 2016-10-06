@@ -1,32 +1,48 @@
 $(document).ready(function() {
 
-    // ---- NAV ---- //
-    // Click Toggle
-    $('.menu-icon').click(function(e) {
-        e.stopPropagation();
-        if ($('#drawer').hasClass('grow')) {
-            closeNav();
-        }
-        else {
-            openNav();
-        }
+    // ---- Scroll  ---- //
+    $(window).scroll(function() {
+        var wScroll = $(this).scrollTop();
+
+        // Parallax
+        parallax(wScroll);
+        fog(wScroll);
     });
-    $('#drawer').click(function(e) {
-        e.stopPropagation();
+
+
+    // ---- Resize ---- //
+    $(window).resize(function() {
+        setHeight();
+        resizeItem();
+        fogHeight();
+        getSwipe();
     });
-    $('body').click(function() {
-        if ($('#drawer').hasClass('grow')) {
-            closeNav();
-        }
-    })
-    // Swipe Toggle
-    $(document).hammer().on('swipeleft', function() {
+
+
+    // ---- Default ---- //
+    setHeight();
+    fogHeight();
+
+
+    // ---- Nav ---- //
+    // Click Events
+    $('.nav-trigger').click(function() {
         openNav();
     });
-    $(document).hammer().on('swiperight', function() {
+    $('.nav .controller').click(function() {
         closeNav();
     });
-    // Keyboard Toggle
+    $('.nav-dimmer').click(function() {
+        closeNav();
+    });
+    $('.nav .item').click(function() {
+        closeNav();
+    });
+
+    // Swipe Events
+    getSwipe();
+
+    // Keyboard Events
     $('body').keydown(function(e) {
         if (e.keyCode == 39) {
             openNav();
@@ -37,139 +53,236 @@ $(document).ready(function() {
     });
 
     // Smooth Scrolling
-    $('nav .top .menu .item').click(function() {
-        var item = $(this).text();
-        if (item != 'contact') {
-            $("html,body").animate({
-                scrollTop: $('#' + item).offset().top
-            }, 300);
-        }
-    });
+    scrollTo();
 
 
-    // ---- HERO ---- //
-    // View Height
-    // Sets a static view height that updates on screen resize
-    // This prevents screen janking in mobile browsers
-    var currentWidth;
-    var currentHeight;
-    $(document).ready(function() {
-        currentHeight = $(window).height();
-        currentWidth = $(window).width();
-        $('#hero').css('height', currentHeight);
-    });
-    $(window).resize(function() {
-        // Prevents Android from triggering the resize on scroll
-        if ($(window).width() != currentWidth) {
-            currentHeight = $(window).height();
-            currentWidth = $(window).width();
-            $('#hero').css('height', currentHeight);
-        }
-    });
+    // ---- Hero ---- //
+    scrollDown();
 
-    // Pause Video
-    // This pauses the video when it is outside the user's view
-    // to help improve overall site performance
-    $(document).scroll(function() {
-        var windowPosition = $(window).scrollTop();
-        if (windowPosition > currentHeight - 50) {
-            $('video').get(0).pause();
+
+    // ---- Portfolio ---- //
+    resizeItem();
+
+
+    // ---- Contact ---- //
+    // Prevents click / hover animations until the form is complete
+    $('#contact').bind('input', function() {
+        var name = $('input[name="name"]').val();
+        var email = $('input[name="email"]').val();
+        var textarea = $('textarea').val();
+
+        if (name != '' && email != '' && textarea != '') {
+            $('input[name="submit"]').click(function(e) {
+                e.preventDefault();
+            });
         }
         else {
-            $('video').get(0).play();
+            $('input[name="submit"]').click(function(e) {
+                e.preventDefault();
+            });
         }
     });
 
+    $('#contact').find('.name, .email, .textarea').hover(
+        function() {
+            var $this = $(this);
+            var content = $(this).find('.mask').next();
+            var element = $(this).attr('class');
 
-    // ---- CONTACT ---- //
-    // Open function
-    function openContact() {
-        $('#contact form').show();
-        $('#contact').addClass('open fixed');
-        $('#contact .title h3').addClass('flipped');
-        $('body').css('overflow-y', 'hidden');    // Temporarily disables scrolling
-    }
-    // Close function
-    function closeContact() {
-        $('#contact').removeClass('open');
-        $('#contact .title h3').removeClass('flipped');
-        $('#contact form').hide();
-        setTimeout(function() {
-            $('#contact').removeClass('fixed');
-            $('body').css('overflow-y', 'auto');  // Re-enables scrolling
-        }, 125);
-    }
-
-    // Opens the menu when the nav contact button is clicked
-    $('#contact-trigger').click(function() {
-        closeNav();
-        openContact();
-    });
-
-    // Toggles contact menu with the title is clicked
-    $('#contact .title').click(function() {
-        if ($('#contact').hasClass('open')) {
-            closeContact();
+            if (content.val() == '' &&
+                !$('#contact').find('input, textarea').is(':focus')) {
+                showTarget(element);
+            }
+            $('.split').bind('input', function() {
+                if (content.val() == '') {
+                    hideTarget(element);
+                }
+                else {
+                    showRelated(element);
+                }
+            });
+        },
+        function() {
+            var content = $(this).find('.mask').next();
+            var element = $(this).attr('class');
+            if (content.val() == '' && !content.is(':focus')) {
+                hideTarget(element);
+            }
         }
-        else {
-            openContact();
-        }
-    });
-    // Closes contact menu when the exit button is clicked
-    $('#contact .exit').click(function() {
-        closeContact();
-    });
-    // Keyboard Toggle
-    $('body').keydown(function(e) {
-        if (e.keyCode == 27) {
-            closeContact();
+    );
+    // Close
+    $('#contact').find('.name, .email, .textarea').focusout(function() {
+        var mask = $(this).find('.mask');
+        if (mask.next().val() == '') {
+            mask.next().removeClass('unslide').addClass('slide');
+            mask.removeClass('slide').addClass('unslide');
         }
     });
 
-    // Closes the contact menu when the user clicks outside the menu
-    $('#contact').click(function(e) {
-        e.stopPropagation();
-    });
-    $('body').click(function() {
-        closeContact();
-    });
+    // Expands textarea to match content
+    $('.textarea').bind('input', function() {
+        var container = $('.textarea')
+        var textSize = $('textarea')[0].scrollHeight;
+        var maxSize = parseInt(container.css('max-height').replace('px',''));
 
-    // Fixes contact button when the user reaches the bottom of the page
-    /*$(window).scroll(function() {
-     *    if ($(window).scrollTop() + $(window).height() > $(document).height() - 3) {
-     *        $('#contact').addClass('fixed');
-     *    }
-     *});*/
+        if (textSize > container.height()) {
+            container.animate({
+                height: textSize
+            }, 75);
+        }
+        if (textSize > maxSize) {
+            $('textarea').css('overflow', 'visible');
+        }
+        if ($('textarea').val() == '') {
+            container.animate({
+                height: 150
+            }, 75);
+        }
+    });
 });
 
 
-// ---- NAV ---- //
-function openNav() {
-    $('#drawer').addClass('grow');
-    $('#main').addClass('shrink');
+// ---- Heights ----- //
+// Set Height
+// Sets a static view height that updates on screen resize
+// This prevents screen janking in mobile browsers
+function setHeight() {
+    var currentHeight = $(window).height();;
+    var currentWidth = $(window).width();;
 
-    // Hides hero content on mobile devices
-    if ($(window).width() < 768) {
-        $('#hero').find('h1, h3').hide();
-        $('#hero').find('.menu-icon .text').text('x');
-        $('#hero').find('.menu-icon .icon').hide();
-    }
+    $('#hero').css('height', currentHeight);
+
+    /*if (currentHeight > 413) {
+     *    $('#contact').css('height', currentHeight);
+     *}
+     *else {
+     *    $('#contact').css('height', 'auto');
+     *}*/
+}
+
+
+// ---- Fog ---- //
+function fogHeight() {
+    var height = $('#about').outerHeight();
+    $('#about .fog').css({
+        'height': 2*height,
+        'width': 2*height
+    });
+}
+
+
+// ---- Parallax ---- //
+function parallax(wScroll) {
+    $('.slow').css({
+        'transform': 'translate(0px, ' + (wScroll / 5  - 50) + '%)',
+        'opacity': 1 - (wScroll / 750)
+    });
+    $('#hero i').css({
+        'opacity': 1 - (wScroll / 250)
+    });
+}
+
+function fog(wScroll) {
+    var height = $('#about').outerHeight();
+    var newScroll = wScroll - $('#about').offset().top;
+    var percent = newScroll / height;
+
+    $('#about .fog').css({
+        'top': (height - (.5 * height)) - (.5 * percent * height) + 'px',
+        'left': ((.25 * height) - height) + (.75 * percent * height) + 'px'
+    });
+}
+
+
+// ---- Nav ---- //
+function openNav() {
+    $('.nav-trigger').stop().animate({opacity: 0}, 200, 'swing');
+    $('.nav-dimmer').stop().show().animate({opacity: 1}, 250, 'swing');
+    $('.nav').stop().animate({right: '0%'}, 250, 'swing');
 }
 
 function closeNav() {
-    $('#drawer').removeClass('grow');
-    $('#main').removeClass('shrink');
+    $('.nav').animate({right: '-100%'}, 150);
+    $('.nav-dimmer').animate({opacity: 0 }, 150).delay(150).hide();
+    $('.nav-trigger').delay(50).animate({opacity: 1}, 100);
+}
 
-    // Hides hero content on mobile devices
-    if ($(window).width() < 768) {
-        $('#hero').find('h1, h3').show();
-        $('#hero').find('.menu-icon .text').text('menu');
-        $('#hero').find('.menu-icon .icon').show();
+
+// ---- Portfolio ---- //
+function resizeItem() {
+    var width = $(window).width();
+    if (width > 1200) {
+        $('#portfolio .item').removeClass('whole half').addClass('third');
+    }
+    else if (width > 666 && width < 1199) {
+        $('#portfolio .item').removeClass('whole third').addClass('half');
+    }
+    else {
+        $('#portfolio .item').removeClass('half third').addClass('whole');
     }
 }
 
 
+// ---- Scrolling ---- //
+// Scrolls to targeted page section
+function scrollTo() {
+    $('.nav .item').click(function() {
+        var target = $(this).text();
+
+        $('html, body').animate({
+            scrollTop: $('#' + target).offset().top
+        }, 500, 'swing');i
+    });
+}
+
+// Scrolls to next page section
+function scrollDown() {
+    $('.scroll-down').click(function() {
+        var next = $(this).parent().next();
+
+        $('html, body').animate({
+            scrollTop: next.offset().top
+        }, 500, 'swing');
+    });
+}
+
+// ---- Contact ---- //
+function showTarget(target) {
+    var mask = $('#contact ' + '.' + target).find('.mask');
+    mask.next().removeClass('slide').addClass('unslide');
+    mask.removeClass('unslide').addClass('slide');
+};
+function showRelated(target) {
+    var name = $('#contact .name');
+    if (name.find('input').val() != '') {
+        name.find('input').removeClass('slide').addClass('unslide');
+        name.find('.mask').removeClass('unslide').addClass('slide');
+    }
+    var email = $('#contact .email');
+    if (email.find('input').val() != '') {
+        email.find('input').removeClass('slide').addClass('unslide');
+        email.find('.mask').removeClass('unslide').addClass('slide');
+    }
+    $('#contact .mask').next().blur();
+}
+function hideTarget(target) {
+    var mask = $('#contact ' + '.' + target).find('.mask');
+    mask.next().removeClass('unslide').addClass('slide');
+    mask.removeClass('slide').addClass('unslide');
+};
+
 // ---- DEVICE DETECTION ---- //
+function getSwipe() {
+    if (isMobile()) {
+        $(document).hammer().on('swipeleft', function() {
+            openNav();
+        });
+        $(document).hammer().on('swiperight', function() {
+            closeNav();
+        });
+    }
+}
+
 function isMobile() {
     var isMobile = false; //initiate as false
     // device detection

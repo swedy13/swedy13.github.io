@@ -1,164 +1,78 @@
-#main
-  width 100%
-  transition .15s
-
-#drawer
-  z-index 100
-  display flex
-  align-content space-between
-  justify-content center
-  text-align center
-  flex-wrap wrap
+.nav-trigger
+  z-index 99
   position fixed
   top 0
-  bottom 0
   right 0
-  overflow-x hidden
-  transform translateX(100%)
-  trasition .15s
+  padding 15px 20px 0
 
-  .top,
-  .bottom
-    opacity 0
-    transition .5s
+.nav-dimmer
+  z-index 99
+  display none
+  position fixed
+  top 0
+  left 0
+  height 100vh
+  width 100%
+  background rgba(0,0,0,.5)
+  opacity 0
 
-@media (max-width: 767px)
-  #main.shrink
-    width 49px
-    .text
-      margin 0
-      font-size 2em
-      font-weight 300
-      line-height 1
-  #drawer.grow
-    width calc(100% - 49px)
-    transform translateX(0)
-    .top,
-    .bottom
-      opacity 1
-
-@media (min-width: 768px)
-  #main.shrink
-    width calc(100% - 150px)
-  #drawer.grow
-    width 150px
-    transform translateX(0)
-    .top,
-    .bottom
-      opacity 1
-
-// Colors
-body.light
-  background #eee
-#drawer.light
-  background #eee
-  box-shadow inset 5px 0 5px -3px #555
-  color #777
-
-body.dark
-  background #222
-#drawer.dark
-  background #222
-  box-shadow inset 5px 0 5px -3px #151515
-  color #aaa
+.nav
+  z-index 100
+  position fixed
+  top 0
+  right -100%
+  height 100vh
+  padding 15px 20px 0
+  border-left 1px solid rgba(255,255,255,.1)
+  // background rgba(0,0,0,.5)
+  // background rgba(171,37,36,.9)
+  background rgba(196,39,37,.9)
+  box-shadow -1px 0 3px rgba(0,0,0,.25)
 
 
-// ---- CONTENT ---- //
-#drawer
-  .top
-    width 100%
-    .logo
-      margin-bottom 15px
-      padding 15px 0
-      border-bottom 1px dashed #aaa
-      font-family Marck
-      font-size 2em
-      cursor default
-
-  // Text
-  .menu .item
-    margin 10px 0
-    font-size 1.25em
-    transition .15s
+// ---- States ---- //
+.nav-trigger, .nav-trigger *
+  cursor pointer
+.nav
+  .open, .open *,
+  .close, .close *,
+  .item, .item *
     cursor pointer
 
-    &:hover,
-    .active
-      transform scale(1.2)
+  .open,
+  .close,
+  .item
+    transition .15s
 
-  &.light .menu .item
-    &:hover,
-    .active
-      color #555
 
-  &.dark .menu .item
-    &:hover,
-    .active
-      color white
+// ---- Alignment ---- //
+.nav-trigger
+  display flex
+  align-items center
+  justify-content flex-end
 
-  // Images
-  .bottom
+  .text
+    margin-right 8px
+
+.nav
+  .open,
+  .close,
+  .item
     display flex
-    justify-content center
-    width 100%
+    align-items center
+    justify-content flex-end
 
-    .item
-      width 100%
-      border-top 1px dashed #aaa
-      transition .15s
+  .item
+    margin-top 12px
 
-      &:hover
-        &.upwork
-          background-color #32cd32
-        &.linkedin
-          background-color #0376a8
-        &.github
-          background-color #555
-        &.quora
-          background-color #a82400
+  .text
+    margin-right 8px
 
-    img
-      height auto
-      filter brightness(.5)
 
-    .item:hover img
-        filter brightness(1) drop-shadow(0 1px 1px #333)
-
-  &.light
-    .bottom .item:hover
-      box-shadow inset 5px 0 5px -3px #555
-  &.dark
-    .bottom .item:hover
-      box-shadow inset 5px 0 5px -3px #151515
-
-@media (orientation: portrait) and (max-width: 414px)
-  #drawer
-    .bottom
-      flex-wrap wrap
-      .item
-        padding 20px 0
-      img
-        width 40%
-
-@media (orientation: landscape) and (max-width: 736px)
-  #drawer
-    .bottom
-      flex-wrap wrap
-      .item
-        width calc(25% - 3px)
-        padding 10px 0
-        &.upwork,
-        &.linkedin,
-        &.github
-          border-right 1px dashed #aaa
-        img
-          width 90%
-
-@media (min-width: 737px)
-  #drawer
-    .bottom
-      flex-wrap wrap
-      .item
-        padding 20px 0
-        img
-          width 60%
+// ---- Fonts ---- //
+.nav-trigger,
+.nav
+  text-align right
+  font-size 1.3em
+  color white
+  text-shadow 0 1px 2px #888, 0 1px 15px rgba(0,0,0,.2)

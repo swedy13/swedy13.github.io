@@ -1,0 +1,17 @@
+  //- .title
+  //-   h3 Have a Project Idea?
+  //- form(action="https://formspree.io/swedy13@gmail.com" method="POST")
+  //-   .split
+  //-     .name
+  //-       .mask.unslide
+  //-         p Your Name
+  //-       input(class="slide" name="name" type="name")
+  //-     .email
+  //-       .mask.unslide
+  //-         p Email Address
+  //-       input(class="slide" name="email" type="email")
+  //-   .textarea(name="message")
+  //-     .mask.unslide
+  //-       p Describe your project...
+  //-     textarea(class="slide")
+  //-   input(name="submit" type="submit" value="Let's Talk")
