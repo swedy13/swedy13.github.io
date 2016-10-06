@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $('head').append('<link rel="stylesheet" href="assets/css/main.css" type="text/css" />');
+
     // ---- Scroll  ---- //
     $(window).scroll(function() {
         var wScroll = $(this).scrollTop();
