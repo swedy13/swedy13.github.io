@@ -10,5 +10,5 @@ logo: sage-logo.svg
 <quote>Talent as a Service</quote>
 <p>A real-time recruiting service and analytics platform.</p>
 <div class="buttons">
- 	<button>Design</button>
+ 	<button>Coming Soon</button>
 </div>

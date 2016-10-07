@@ -10,6 +10,5 @@ logo: smartprofyl-logo.svg
 <quote>Re-Imagining Work</quote>
 <p>A job marketplace and education platform for the technology age.</p>
 <div class="buttons">
- 	<button>Design</button>
- 	<button>Prototype</button>
+ 	<a class="button" href="https://pr.to/M63FC4/">Prototype</a>
 </div>

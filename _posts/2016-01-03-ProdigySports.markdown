@@ -10,5 +10,5 @@ logo: prodigy-logo.svg
 <quote>Off-Season Sporting Events</quote>
 <p>A directory of sports camps and tournaments form North American athletes.</p>
 <div class="buttons">
- 	<button>Design</button>
+ 	<a class="button" href="https://www.behance.net/gallery/43372019/Prodigy-Sports">Design</a>
 </div>
