@@ -7,8 +7,10 @@ $(document).ready(function() {
         var wScroll = $(this).scrollTop();
 
         // Parallax
-        parallax(wScroll);
-        fog(wScroll);
+        if (!isMobile()) {
+            parallax(wScroll);
+            fog(wScroll);
+        }
     });
 
 
@@ -17,7 +19,10 @@ $(document).ready(function() {
         setHeight();
         resizeItem();
         fogHeight();
-        getSwipe();
+
+        if (isMobile()) {
+            getSwipe();
+        }
     });
 
 
@@ -147,6 +152,10 @@ $(document).ready(function() {
 // ---- Load ---- //
 function load() {
     $('head').append('<link rel="stylesheet" href="assets/css/main.css" type="text/css" />');
+
+    if (!isMobile()) {
+        $('#about .fog').css('background-image','url(assets/images/backgrounds/fog-opt.png)');
+    }
 
     setTimeout(function() {
         $('#preloader .circle').animate({

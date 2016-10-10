@@ -10,5 +10,5 @@ logo: movietv-logo.svg
 <quote>Blockbusters at Your Fingertips</quote>
 <p>A video streaming service sharing media from the cloud.</p>
 <div class="buttons">
- 	<a class="button" href="https://www.behance.net/gallery/37383353/Movietv">Design</a>
+ 	<a class="button" href="https://www.behance.net/gallery/37383353/Movietv" target="_blank">Design</a>
 </div>

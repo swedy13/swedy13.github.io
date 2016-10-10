@@ -10,6 +10,6 @@ logo: pairable-logo.svg
 <quote>Track What Matters Most</quote>
 <p>A mobile app and tracking device to help locate anything.</p>
 <div class="buttons">
- 	<a class="button" href="https://www.behance.net/gallery/43667461/Pairable">Design</a>
+ 	<a class="button" href="https://www.behance.net/gallery/43667461/Pairable" target="_blank">Design</a>
 </div>
 
