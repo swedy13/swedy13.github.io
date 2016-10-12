@@ -11,6 +11,11 @@ $(document).ready(function() {
             parallax(wScroll);
             fog(wScroll);
         }
+        if (isMobile()) {
+            $('#hero').animate({
+                marginTop: 0,
+            }, 50);
+        }
     });
 
 
@@ -182,14 +187,13 @@ function load() {
 // Sets a static view height that updates on screen resize
 // This prevents screen janking in mobile browsers
 function setHeight() {
-    var currentHeight = $(window).height() + 60;
+    var currentHeight = $(window).height();
     var currentWidth = $(window).width();
 
     $('#hero').css({
-        height: currentHeight,
-        marginTop: '-60px'
+        height: currentHeight + 60 +'px',
+        marginTop: '-60px',
     });
-
 }
 
 
