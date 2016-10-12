@@ -187,15 +187,9 @@ function setHeight() {
 
     $('#hero').css({
         height: currentHeight,
-        marginTop: '60px'
+        marginTop: '-60px'
     });
 
-    /*if (currentHeight > 413) {
-     *    $('#contact').css('height', currentHeight);
-     *}
-     *else {
-     *    $('#contact').css('height', 'auto');
-     *}*/
 }
 
 
