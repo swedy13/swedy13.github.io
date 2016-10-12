@@ -11,11 +11,6 @@ $(document).ready(function() {
             parallax(wScroll);
             fog(wScroll);
         }
-        if (isMobile()) {
-            $('#hero').animate({
-                marginTop: 0,
-            }, 50);
-        }
     });
 
 
@@ -191,8 +186,7 @@ function setHeight() {
     var currentWidth = $(window).width();
 
     $('#hero').css({
-        height: currentHeight + 60 +'px',
-        marginTop: '-60px',
+        height: currentHeight,
     });
 }
 
