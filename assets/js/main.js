@@ -182,8 +182,8 @@ function load() {
 // Sets a static view height that updates on screen resize
 // This prevents screen janking in mobile browsers
 function setHeight() {
-    var currentHeight = $(window).height();;
-    var currentWidth = $(window).width();;
+    var currentHeight = $(window).height();
+    var currentWidth = $(window).width();
 
     $('#hero').css('height', currentHeight);
 
