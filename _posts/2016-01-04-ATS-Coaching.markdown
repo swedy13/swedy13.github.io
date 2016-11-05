@@ -10,5 +10,5 @@ logo: atsc-logo.svg
 <quote>Trainers on Demand</quote>
 <p>A sports staffing agency and international training camp provider.</p>
 <div class="buttons">
- 	<button>Coming Soon</button>
+ 	<a class="button" href="https://www.behance.net/gallery/43761275/ATS-Coaching" target="_blank">Design</a>
 </div>
